@@ -9,7 +9,7 @@ namespace Net\Bazzline\Component\Requirement;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-class OrCollection extends AbstractCollection
+class OrCollection extends AbstractItemCollection
 {
     /**
      * @return bool

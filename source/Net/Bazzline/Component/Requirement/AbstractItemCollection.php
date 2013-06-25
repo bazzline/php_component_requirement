@@ -10,7 +10,7 @@ namespace Net\Bazzline\Component\Requirement;
  * @since 2013-06-25
  * @todo move basic collection stuff to collection
  */
-abstract class AbstractCollection implements RequirementInterface, CollectionInterface
+abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionInterface
 {
     /**
      * @var array

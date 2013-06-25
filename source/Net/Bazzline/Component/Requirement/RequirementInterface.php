@@ -9,12 +9,19 @@ namespace Net\Bazzline\Component\Requirement;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-interface RequirementInterface
+interface RequirementInterface extends IsMetInterface
 {
     /**
-     * @return boolean
+     * @param ItemInterface $item
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function isMet();
+    public function addItem(ItemInterface $item);
+
+    /**
+     * @param ItemCollectionInterface $collection
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-25
+     */
+    public function addCollection(ItemCollectionInterface $collection);
 }
