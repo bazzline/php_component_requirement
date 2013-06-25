@@ -1,0 +1,31 @@
+{
+    "name": "net_bazzline/component_requirement",
+    "type": "library",
+    "description": "php component requirement",
+    "keywords": ["php", "net_bazzline", "component", "requirement"],
+    "homepage": "https://github.com/stevleibelt/php_component_requirement",
+    "license": "GPLv3",
+    "authors": [
+	    {
+            "name": "Stev Leibelt",
+            "email": "artodeto@arcor.de",
+            "homepage": "http://artodeto.bazzline.net",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "mikey179/vfsStream": "dev-master",
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Net\\Bazzline\\Component\\Requirement\\": "source/",
+            "Test\\Net\\Bazzline\\Component\\Requirement\\": "test/"
+        }
+    }
+}
