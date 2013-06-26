@@ -38,6 +38,7 @@ class IsAGoodTableRequirement extends Requirement
      */
     public function __construct()
     {
+        parent::__construct();
         $colorCollection = $this->createColorCollection();
         $featureCollection = $this->createFeatureCollection();
         $perfectHeight = new PerfectHeight();

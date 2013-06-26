@@ -83,6 +83,7 @@ class Requirement implements RequirementInterface
      */
     public function isMet()
     {
+echo var_export($this->collections, true);
         foreach ($this->collections as $collection) {
             if (!$collection->isMet()) {
                 return false;

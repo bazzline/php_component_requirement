@@ -39,6 +39,6 @@ foreach ($tables as $table) {
     $isMet = $requirement->isMet();
 
     echo 'Requirement "' . get_class($requirement) .
-        '" is ' . (($isMet) ? 'met' : 'not met') . ' for table: ' . PHP_EOL .
+        '" is ' . (($isMet == true) ? 'met' : 'not met') . ' for table: ' . PHP_EOL .
         var_export($table, true) . PHP_EOL;
 }
