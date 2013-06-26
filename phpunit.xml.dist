@@ -1,4 +1,4 @@
-<phpunit bootstrap="bootstrap.php"
+<phpunit bootstrap="tests/bootstrap.php"
          cacheTokens="false"
          colors="true"
          convertErrorsToExceptions="true"
@@ -9,5 +9,9 @@
          stopOnIncomplete="false"
          stopOnSkipped="false">
 
-    <
+    <testsuites>
+        <testsuite name="Requirement Test Suite">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
