@@ -25,11 +25,11 @@ Instance of class objectOne should be provided via initial creation of collectio
 
 I created this component to solve the following problem
 
-    The table is great if it is green or red or brown or yellow AND extendable or foldable AND 80 cm high
+    The table is great if it is green or red or brown or yellow AND extendable or foldable AND 80 cm high or it is created by jens wiese or stev leibelt.
 
-    [green|red|brown|yellow]&[extendable|foldable]&[80cm]
+    [[green|red|brown|yellow]&[extendable|foldable]&[80cm]]or[jens wiese|stevleibelt]
 
-    OrCollection&OrCollection&OrCollection
+    [OrCollection&OrCollection&OrCollection]or[OrCollection]
 
 # Thanks
 
