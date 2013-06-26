@@ -18,7 +18,7 @@ class AndCollection extends AbstractItemCollection
      */
     public function isMet()
     {
-        foreach ($this->items as $item) {
+        foreach ($this->storage as $item) {
             if (!$item->isMet()) {
                 return false;
             }

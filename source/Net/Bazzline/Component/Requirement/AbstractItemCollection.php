@@ -2,6 +2,8 @@
 
 namespace Net\Bazzline\Component\Requirement;
 
+use SplObjectStorage;
+
 /**
  * Class RequirementCollection
  *
@@ -13,20 +15,21 @@ namespace Net\Bazzline\Component\Requirement;
 abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionInterface
 {
     /**
-     * @var array
+     * @var \SplObjectStorage
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    protected $items = array();
+    protected $storage;
 
     /**
      * {$inheritDoc}
      */
     public function add(ItemInterface $item)
     {
-        //@TODO switch to SplObjectStorage?
-        $key = spl_object_hash($item);
-        $this->items[$key] = $item;
+        if (is_null($this->storage)) {
+            $this->storage = new SplObjectStorage();
+        }
+        $this->storage->attach($item);
     }
 
     /**
@@ -34,6 +37,6 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      */
     public function getItems()
     {
-        return $this->items;
+        return $this->storage;
     }
 }
