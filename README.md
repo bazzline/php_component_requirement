@@ -8,8 +8,7 @@ Add opportunity for optional values.
 
     * each requirementItem has to provide a setObjectOne() method
     * the collections don't have to know about that
-    * add "getItems" to collection (AndCollection and OrCollection)
-    * refactor addItem on collection and implement usage of spl_object_hash -> us this hash as $items[hash] = $item to replace existing item if it is added again
+    * how to deal with or collections in Requirement isMet() iteraton? Right now, only and is provided
     * implement usage of getItems to Requirement:
         * foreach ($collection->getItems() as $item) {
             if ($item hasMethod setRuntimeObjectOne) {
