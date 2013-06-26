@@ -53,7 +53,7 @@ class IsAGoodTableRequirement extends Requirement
         $orCollection->addItem($developerCollection);
         $orCollection->addItem($andCollection);
 
-        $this->collections = $orCollection;
+        $this->addCollection($orCollection);
     }
 
     /**
