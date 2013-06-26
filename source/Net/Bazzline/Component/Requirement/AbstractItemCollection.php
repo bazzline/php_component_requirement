@@ -17,7 +17,7 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    protected $collection;
+    protected $items;
 
     /**
      * @param ItemInterface $item
@@ -26,6 +26,6 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      */
     public function add(ItemInterface $item)
     {
-        $this->collection[] = $item;
+        $this->items[] = $item;
     }
 }
