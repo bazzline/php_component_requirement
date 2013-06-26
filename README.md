@@ -2,6 +2,11 @@
 
 This component should help you to mould business logic into simple classes
 
+# Packagist
+
+    ```
+    require: "net_bazzline/component_requirement": "dev-master"
+
 ## ToDo's
 
 Add opportunity for optional values.
