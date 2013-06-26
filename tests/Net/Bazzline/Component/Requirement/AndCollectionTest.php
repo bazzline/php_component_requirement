@@ -25,9 +25,9 @@ class AndCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testCollectionValidatesTrueWhenAllItemsValidate()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(true);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(true);
 
         $this->collection->add($item1);
@@ -38,9 +38,9 @@ class AndCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testCollectionFailsWhenOneItemDoesNotValidate()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(true);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(false);
 
         $this->collection->add($item1);
@@ -51,9 +51,9 @@ class AndCollectionTest extends \PHPUnit_Framework_TestCase
 
     public function testCollectionFailsWhenAllItemsDoNotValidate()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(false);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\ItemInterface')->shouldDeferMissing();
+        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(false);
 
         $this->collection->add($item1);

@@ -14,11 +14,11 @@ interface RequirementInterface extends IsMetInterface
     /**
      * Easies up item handling
      *
-     * @param ItemInterface $item
+     * @param IsMetInterface $item
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function addItemAsCollection(ItemInterface $item);
+    public function addItemAsCollection(IsMetInterface $item);
 
     /**
      * Adds a collection to the requirement
