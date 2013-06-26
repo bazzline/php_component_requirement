@@ -17,14 +17,16 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    protected $items;
+    protected $items = array();
 
     /**
      * {$inheritDoc}
      */
     public function add(ItemInterface $item)
     {
-        $this->items[] = $item;
+        //@TODO switch to SplObjectStorage?
+        $key = spl_object_hash($item);
+        $this->items[$key] = $item;
     }
 
     /**
@@ -32,6 +34,6 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      */
     public function getItems()
     {
-        return (is_null($this->items)) ? array() : $this->items;
+        return $this->items;
     }
 }
