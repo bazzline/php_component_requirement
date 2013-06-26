@@ -12,9 +12,21 @@ namespace Net\Bazzline\Component\Requirement;
 interface ItemCollectionInterface
 {
     /**
+     * Add an array to the collection.
+     * If an instance is already added, it will be replaced.
+     *
      * @param ItemInterface $item
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
     public function add(ItemInterface $item);
+
+    /**
+     * Returns all added items as array
+     *
+     * @return \SplObjectStorage
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-25
+     */
+    public function getItems();
 }
