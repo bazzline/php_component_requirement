@@ -9,7 +9,7 @@ namespace Net\Bazzline\Component\Requirement;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-class Requirement implements IsMetInterface, IsMetInterface
+class Requirement implements RequirementInterface
 {
     /**
      * @var array
@@ -19,11 +19,9 @@ class Requirement implements IsMetInterface, IsMetInterface
     protected $collections;
 
     /**
-     * @param ItemInterface $item
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-25
+     * {$inheritDoc}
      */
-    public function addItem(ItemInterface $item)
+    public function addItemAsCollection(ItemInterface $item)
     {
         $collection = new AndCollection();
         $collection->add($item);
@@ -32,16 +30,12 @@ class Requirement implements IsMetInterface, IsMetInterface
     }
 
     /**
-     * @param ItemCollectionInterface $collection
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-25
+     * {$inheritDoc}
      */
     public function addCollection(ItemCollectionInterface $collection)
     {
         $this->collections[] = $collection;
     }
-
-
 
     /**
      * Magic setter method to keep this class as generic as possible.
@@ -68,9 +62,7 @@ class Requirement implements IsMetInterface, IsMetInterface
     }
 
     /**
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-25
+     * {$inheritDoc}
      */
     public function isMet()
     {
