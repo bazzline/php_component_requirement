@@ -2,6 +2,7 @@
 
 namespace Net\Bazzline\Component\Requirement;
 
+use InvalidArgumentException;
 use SplObjectStorage;
 
 /**
@@ -51,21 +52,26 @@ class Requirement implements RequirementInterface
     /**
      * Magic setter method to keep this class as generic as possible.
      *
-     * @param string $name - property name
-     * @param mixed $value - value of property
+     * @param string $methodName - name of the method
+     * @param mixed $arguments - value
+     * @throws InvalidArgumentException
      * @author sleibelt
      * @since 2013-06-25
      */
-    public function __set($name, $value)
+    public function __call($methodName, $arguments)
     {
-        $this->$name = $value;
-        $setterMethodName = 'set' . ucfirst($name);
+        if (count($arguments) != 1) {
+            throw new InvalidArgumentException(
+                'Only one argument value should be provided.'
+            );
+        }
+        $value = current($arguments);
 
         foreach ($this->collections as $collection) {
             foreach ($collection->getItems() as $item) {
                 $itemMethods = array_flip(get_class_methods($item));
-                if (isset($itemMethods[$setterMethodName])) {
-                    $item->$setterMethodName($value);
+                if (isset($itemMethods[$methodName])) {
+                    $item->$methodName($value);
                     $collection->addItem($item);
                 }
             }
