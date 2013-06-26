@@ -5,6 +5,21 @@ This component should help you to mould business logic into simple classes
 ## ToDo's
 
 Add opportunity for optional values.
+    * each requirement has to provide a setObjectOne() method
+    * also each item has to provide that method if it is a runtime probpery (changeable)
+    * the collections don't have to know about that
+    * initial properties have to be provided via constructor
+    * add "getItems" to collection (AndCollection and OrCollection)
+    * refactor addItem on collection and implement usage of spl_object_hash -> us this hash as $items[hash] = $item to replace existing item if it is added again
+    * implement usage of getItems to Requirement:
+        * foreach ($collection->getItems() as $item) {
+            if ($item hasMethod setRuntimeObjectOne) {
+                $item->setRuntimeObjectOne($this->runtimeObjectOne)
+            }
+            $collection->addItem($item)
+        }
+
+Add examples
 
 ### Example
 
