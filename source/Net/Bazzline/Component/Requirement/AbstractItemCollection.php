@@ -20,12 +20,18 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
     protected $items;
 
     /**
-     * @param ItemInterface $item
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-25
+     * {$inheritDoc}
      */
     public function add(ItemInterface $item)
     {
         $this->items[] = $item;
+    }
+
+    /**
+     * {$inheritDoc}
+     */
+    public function getItems()
+    {
+        return (is_null($this->items)) ? array() : $this->items;
     }
 }
