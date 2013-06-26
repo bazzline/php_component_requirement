@@ -12,7 +12,7 @@ use SplObjectStorage;
  * @since 2013-06-25
  * @todo move basic collection stuff to collection
  */
-abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionInterface
+abstract class AbstractCollection implements IsMetInterface, CollectionInterface
 {
     /**
      * @var \SplObjectStorage

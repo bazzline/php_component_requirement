@@ -43,7 +43,7 @@ class Requirement implements RequirementInterface
     /**
      * {$inheritDoc}
      */
-    public function addCollection(ItemCollectionInterface $collection)
+    public function addCollection(CollectionInterface $collection)
     {
         $this->collections->attach($collection);
     }

@@ -9,7 +9,7 @@ namespace Net\Bazzline\Component\Requirement;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-interface ItemCollectionInterface
+interface CollectionInterface
 {
     /**
      * Add an array to the collection.
