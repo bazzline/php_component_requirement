@@ -2,6 +2,8 @@
 
 namespace Net\Bazzline\Component\Requirement;
 
+use SplObjectStorage;
+
 /**
  * Class Requirement
  *
@@ -12,7 +14,7 @@ namespace Net\Bazzline\Component\Requirement;
 class Requirement implements RequirementInterface
 {
     /**
-     * @var array
+     * @var \SplObjectStorage
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
@@ -34,7 +36,10 @@ class Requirement implements RequirementInterface
      */
     public function addCollection(ItemCollectionInterface $collection)
     {
-        $this->collections[] = $collection;
+        if (is_null($this->collections)) {
+            $this->collections = new SplObjectStorage();
+        }
+        $this->collections->attach($collection);
     }
 
     /**
