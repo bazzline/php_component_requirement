@@ -11,6 +11,12 @@
             "email": "artodeto@arcor.de",
             "homepage": "http://artodeto.bazzline.net",
             "role": "Developer"
+        },
+        {
+            "name": "Jens Wiese",
+            "email": "jens@dev.lohering.de",
+            "homepage": "http://www.howtrueisfalse.de",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
