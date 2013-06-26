@@ -12,6 +12,8 @@ Add opportunity for optional values.
 
     * each requirementItem has to provide a setObjectOne() method
     * how to deal with or collections in Requirement isMet() iteraton? Right now, only and is provided
+    * add a lock mechanism to mark a requirement as finished. An exception should be thrown if an item is added when a requirement is locked
+    * add same mechanism to collection if it is usefull
     * unittest my dear
 
 Add examples
