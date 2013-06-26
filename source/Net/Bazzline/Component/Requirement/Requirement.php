@@ -41,6 +41,32 @@ class Requirement implements IsMetInterface, IsMetInterface
         $this->collections[] = $collection;
     }
 
+
+
+    /**
+     * Magic setter method to keep this class as generic as possible.
+     *
+     * @param string $name - property name
+     * @param mixed $value - value of property
+     * @author sleibelt
+     * @since 2013-06-25
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+        $setterMethodName = 'set' . ucfirst($name);
+
+        foreach ($this->collections as $collection) {
+            foreach ($collection->getItems() as $item) {
+                $itemMethods = array_flip(get_class_methods($item));
+                if (isset($itemMethods[$setterMethodName])) {
+                    $item->$setterMethodName($value);
+                    $collection->addItem($item);
+                }
+            }
+        }
+    }
+
     /**
      * @return bool
      * @author stev leibelt <artodeto@arcor.de>
