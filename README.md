@@ -7,15 +7,7 @@ This component should help you to mould business logic into simple classes
 Add opportunity for optional values.
 
     * each requirementItem has to provide a setObjectOne() method
-    * the collections don't have to know about that
     * how to deal with or collections in Requirement isMet() iteraton? Right now, only and is provided
-    * implement usage of getItems to Requirement:
-        * foreach ($collection->getItems() as $item) {
-            if ($item hasMethod setRuntimeObjectOne) {
-                $item->setRuntimeObjectOne($this->runtimeObjectOne)
-            }
-            $collection->addItem($item)
-        }
     * unittest my dear
 
 Add examples
