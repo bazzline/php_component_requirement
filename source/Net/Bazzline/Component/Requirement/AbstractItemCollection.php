@@ -26,6 +26,7 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
      */
     public function add(ItemInterface $item)
     {
+        // @TODO how to deal with that check? put it in the constructor?
         if (is_null($this->items)) {
             $this->items = new SplObjectStorage();
         }

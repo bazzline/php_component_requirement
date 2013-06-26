@@ -12,9 +12,7 @@ namespace Net\Bazzline\Component\Requirement;
 class AndCollection extends AbstractItemCollection
 {
     /**
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-25
+     * {$inheritDoc}
      */
     public function isMet()
     {
