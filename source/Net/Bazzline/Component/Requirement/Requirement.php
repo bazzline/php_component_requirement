@@ -35,7 +35,9 @@ class Requirement implements RequirementInterface
      */
     public function addItem(IsMetInterface $item)
     {
-        $this->collections->attach($item);
+        $collection = new AndCollection();
+        $collection->addItem($item);
+        $this->addCollection($collection);
     }
 
     /**

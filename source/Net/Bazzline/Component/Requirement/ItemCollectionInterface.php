@@ -19,7 +19,7 @@ interface ItemCollectionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function add(IsMetInterface $item);
+    public function addItem(IsMetInterface $item);
 
     /**
      * Returns all added items as array

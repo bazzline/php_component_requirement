@@ -24,7 +24,7 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
     /**
      * {$inheritDoc}
      */
-    public function add(IsMetInterface $item)
+    public function addItem(IsMetInterface $item)
     {
         // @TODO how to deal with that check? put it in the constructor?
         if (is_null($this->items)) {
