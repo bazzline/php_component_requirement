@@ -32,6 +32,6 @@ I created this component to solve the following problem
 
     Der tisch ist toll wenn er gruen oder rot oder braun gelb und ausziehbar oder klappbar und 80cm hoch ist
 
-    [gruen|rot|braun|gelb][ausziehbar|klappbar][80cm]
+    [gruen|rot|braun|gelb]&[ausziehbar|klappbar]&[80cm]
 
-    OrCollection|OrCollection|OrCollection
+    OrCollection&OrCollection&OrCollection
