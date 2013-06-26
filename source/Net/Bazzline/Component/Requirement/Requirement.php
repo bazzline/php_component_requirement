@@ -50,7 +50,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * Magic setter method to keep this class as generic as possible.
+     * Magic call method to keep this class as generic as possible.
      *
      * @param string $methodName - name of the method
      * @param mixed $arguments - value
