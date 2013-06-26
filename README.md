@@ -29,8 +29,8 @@ Instance of class objectOne should be provided via initial creation of collectio
 
 I created this component to solve the following problem
 
-    Der tisch ist toll wenn er gruen oder rot oder braun gelb und ausziehbar oder klappbar und 80cm hoch ist
+    The table is great if it is green or red or brown or yellow AND extendable or foldable AND 80 cm high
 
-    [gruen|rot|braun|gelb]&[ausziehbar|klappbar]&[80cm]
+    [green|red|brown|yellow]&[extendable|foldable]&[80cm]
 
     OrCollection&OrCollection&OrCollection
