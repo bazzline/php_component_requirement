@@ -18,7 +18,7 @@ interface RequirementInterface extends IsMetInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function addItemAsCollection(IsMetInterface $item);
+    public function addItem(IsMetInterface $item);
 
     /**
      * Adds a collection to the requirement

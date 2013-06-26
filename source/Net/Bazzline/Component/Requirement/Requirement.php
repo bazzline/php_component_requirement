@@ -21,14 +21,21 @@ class Requirement implements RequirementInterface
     protected $collections;
 
     /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-25
+     * @todo how to avoid that?
+     */
+    public function __construct()
+    {
+        $this->collections = new SplObjectStorage();
+    }
+
+    /**
      * {$inheritDoc}
      */
-    public function addItemAsCollection(IsMetInterface $item)
+    public function addItem(IsMetInterface $item)
     {
-        $collection = new AndCollection();
-        $collection->add($item);
-
-        $this->addCollection($collection);
+        $this->collections->attach($item);
     }
 
     /**
@@ -36,9 +43,6 @@ class Requirement implements RequirementInterface
      */
     public function addCollection(ItemCollectionInterface $collection)
     {
-        if (is_null($this->collections)) {
-            $this->collections = new SplObjectStorage();
-        }
         $this->collections->attach($collection);
     }
 
