@@ -26,3 +26,7 @@ I created this component to solve the following problem
     [green|red|brown|yellow]&[extendable|foldable]&[80cm]
 
     OrCollection&OrCollection&OrCollection
+
+# Thanks
+
+    * The rumanian stallion ;-) - this is your idea, developed by ourselves :-)
