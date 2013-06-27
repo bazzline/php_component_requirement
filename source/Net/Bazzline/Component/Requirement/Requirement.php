@@ -34,16 +34,6 @@ class Requirement implements RequirementInterface
     /**
      * {$inheritDoc}
      */
-    public function addItem(IsMetInterface $item)
-    {
-        $collection = new AndCollection();
-        $collection->addItem($item);
-        $this->addCollection($collection);
-    }
-
-    /**
-     * {$inheritDoc}
-     */
     public function addCollection(CollectionInterface $collection)
     {
         $this->collections->attach($collection);
