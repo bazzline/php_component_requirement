@@ -34,6 +34,16 @@ class Requirement implements RequirementInterface
     /**
      * {$inheritDoc}
      */
+    public function addItem(IsMetInterface $item)
+    {
+        $collection = new AndCollection();
+        $collection->addItem($item);
+        $this->addCollection($collection);
+    }
+
+    /**
+     * {$inheritDoc}
+     */
     public function addCollection(CollectionInterface $collection)
     {
         $this->collections->attach($collection);
@@ -55,20 +65,11 @@ class Requirement implements RequirementInterface
                 'Only one argument value should be provided.'
             );
         }
+
         $value = current($arguments);
 
         foreach ($this->collections as $collection) {
-            foreach ($collection->getItems() as $item) {
-                if ($item instanceof \Net\Bazzline\Component\Requirement\CollectionInterface) {
-                    $collection->$methodName($value);
-                } else {
-                    $itemMethods = array_flip(get_class_methods($item));
-                    if (isset($itemMethods[$methodName])) {
-                        $item->$methodName($value);
-                        $collection->addItem($item);
-                    }
-                }
-            }
+            $collection->$methodName($value);
         }
     }
 

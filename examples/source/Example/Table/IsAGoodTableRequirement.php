@@ -8,6 +8,7 @@
 namespace Example\Table;
 
 use Example\Table\Items\BrownColor;
+use Example\Table\Items\Developer;
 use Example\Table\Items\ExtendableFeature;
 use Example\Table\Items\FoldableFeature;
 use Example\Table\Items\GreenColor;
@@ -101,12 +102,9 @@ class IsAGoodTableRequirement extends Requirement
      */
     private function createDeveloperCollection()
     {
-        $jensWiese = new JensWieseDeveloper();
-        $stevLeibelt = new StevLeibeltDeveloper();
-
         $collection = new OrCollection();
-        $collection->addItem($jensWiese);
-        $collection->addItem($stevLeibelt);
+        $collection->addItem(new JensWieseDeveloper());
+        $collection->addItem(new StevLeibeltDeveloper());
 
         return $collection;
     }
