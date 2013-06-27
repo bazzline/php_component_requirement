@@ -6,22 +6,7 @@
 
 namespace Example\Table;
 
-require 'source/Net/Bazzline/Component/Requirement/developmentAutoloader.php';
-require 'examples/Table/Table.php';
-require 'examples/Table/IsAGoodTableRequirement.php';
-require 'examples/Table/Items/Color.php';
-require 'examples/Table/Items/Developer.php';
-require 'examples/Table/Items/Feature.php';
-require 'examples/Table/Items/Height.php';
-require 'examples/Table/Items/BrownColor.php';
-require 'examples/Table/Items/GreenColor.php';
-require 'examples/Table/Items/YellowColor.php';
-require 'examples/Table/Items/RedColor.php';
-require 'examples/Table/Items/ExtendableFeature.php';
-require 'examples/Table/Items/FoldableFeature.php';
-require 'examples/Table/Items/PerfectHeight.php';
-require 'examples/Table/Items/JensWieseDeveloper.php';
-require 'examples/Table/Items/StevLeibeltDeveloper.php';
+require __DIR__ . '/../../../../vendor/autoload.php';
 
 $tables = array();
 $tables[] = new Table('black', 'heatable', '40cm', 'BSD daemon');
