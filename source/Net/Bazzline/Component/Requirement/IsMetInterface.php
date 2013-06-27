@@ -12,7 +12,10 @@ namespace Net\Bazzline\Component\Requirement;
 interface IsMetInterface
 {
     /**
+     * Validates if given requirement is met
+     *
      * @return boolean
+     * @throws \RuntimeException
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
