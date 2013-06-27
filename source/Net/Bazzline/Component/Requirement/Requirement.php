@@ -15,7 +15,7 @@ use SplObjectStorage;
 class Requirement implements RequirementInterface
 {
     /**
-     * @var \SplObjectStorage
+     * @var \SplObjectStorage|ConditionInterface[]|IsMetInterface[]
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
