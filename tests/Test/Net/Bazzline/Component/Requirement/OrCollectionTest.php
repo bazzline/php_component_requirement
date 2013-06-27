@@ -23,9 +23,12 @@ class OrCollectionTest extends \PHPUnit_Framework_TestCase
         $this->collection = new OrCollection();
     }
 
+    /**
+     * @expectedException \RuntimeException
+     */
     public function testCollectionFailsWhenNoItemIsProvided()
     {
-        $this->assertFalse($this->collection->isMet());
+        $this->collection->isMet();
     }
 
 

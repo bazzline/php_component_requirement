@@ -23,9 +23,12 @@ class AndCollectionTest extends \PHPUnit_Framework_TestCase
         $this->collection = new AndCollection();
     }
 
+    /**
+     * @expectedException \RuntimeException
+     */
     public function testCollectionFailsWhenNoItemIsProvided()
     {
-        $this->assertFalse($this->collection->isMet());
+        $this->collection->isMet();
     }
 
     public function testCollectionValidatesTrueWhenAllItemsValidate()
