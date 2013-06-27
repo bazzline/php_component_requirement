@@ -12,7 +12,7 @@ namespace Net\Bazzline\Component\Requirement;
 interface ConditionInterface
 {
     /**
-     * Add an array to the collection.
+     * Adds an item to the condition.
      * If an instance is already added, it will be replaced.
      *
      * @param IsMetInterface $item

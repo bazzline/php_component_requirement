@@ -19,7 +19,7 @@ class OrCondition extends AbstractCondition
     public function isMet()
     {
         if ($this->items->count() == 0) {
-            throw new RuntimeException('No items set in this collection.');
+            throw new RuntimeException('No items set in this condition.');
         }
 
         foreach ($this->items as $item) {

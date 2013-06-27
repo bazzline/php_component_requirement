@@ -12,11 +12,11 @@ namespace Net\Bazzline\Component\Requirement;
 interface RequirementInterface extends IsMetInterface
 {
     /**
-     * Adds a collection to the requirement
+     * Adds a condition to the requirement
      *
-     * @param ConditionInterface $collection
+     * @param ConditionInterface $condition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function addCondition(ConditionInterface $collection);
+    public function addCondition(ConditionInterface $condition);
 }

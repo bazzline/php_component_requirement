@@ -26,11 +26,11 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
 
     public function testPassingOnOfDepencenciesToCondition()
     {
-        $collection = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
-        $collection->shouldReceive('setSomething')->with('someValue')->once();
-        $collection->shouldReceive('getItems')->andReturn(new \SplObjectStorage());
+        $condition = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
+        $condition->shouldReceive('setSomething')->with('someValue')->once();
+        $condition->shouldReceive('getItems')->andReturn(new \SplObjectStorage());
 
-        $this->requirement->addCondition($collection);
+        $this->requirement->addCondition($condition);
         $this->requirement->__call('setSomething', array('someValue'));
     }
 
@@ -40,11 +40,11 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $item2 = \Mockery::mock(new DummyItem());
         $item2->shouldReceive('setSomething')->with('someValue')->once();
 
-        $collection = new AndCondition();
-        $collection->addItem($item1);
-        $collection->addItem($item2);
+        $condition = new AndCondition();
+        $condition->addItem($item1);
+        $condition->addItem($item2);
 
-        $this->requirement->addCondition($collection);
+        $this->requirement->addCondition($condition);
         $this->requirement->setSomething('someValue');
     }
 }
