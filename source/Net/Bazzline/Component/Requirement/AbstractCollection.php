@@ -12,7 +12,7 @@ use SplObjectStorage;
  * @since 2013-06-25
  * @todo move basic collection stuff to collection
  */
-abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionInterface
+abstract class AbstractCollection implements IsMetInterface, CollectionInterface
 {
     /**
      * @var \SplObjectStorage
@@ -32,7 +32,7 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
     /**
      * {$inheritDoc}
      */
-    public function add(ItemInterface $item)
+    public function addItem(IsMetInterface $item)
     {
         $this->items->attach($item);
     }
