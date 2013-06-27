@@ -2,6 +2,7 @@
 
 namespace Net\Bazzline\Component\Requirement;
 
+use InvalidArgumentException;
 use SplObjectStorage;
 
 /**
