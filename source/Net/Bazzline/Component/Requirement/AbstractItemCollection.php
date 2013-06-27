@@ -22,14 +22,18 @@ abstract class AbstractItemCollection implements IsMetInterface, ItemCollectionI
     protected $items;
 
     /**
+     * Constructor of the class
+     */
+    public function __construct()
+    {
+        $this->items = new SplObjectStorage();
+    }
+
+    /**
      * {$inheritDoc}
      */
     public function add(ItemInterface $item)
     {
-        // @TODO how to deal with that check? put it in the constructor?
-        if (is_null($this->items)) {
-            $this->items = new SplObjectStorage();
-        }
         $this->items->attach($item);
     }
 
