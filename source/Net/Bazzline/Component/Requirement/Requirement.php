@@ -60,7 +60,7 @@ class Requirement implements RequirementInterface
         foreach ($this->collections as $collection) {
             foreach ($collection->getItems() as $item) {
                 if ($item instanceof \Net\Bazzline\Component\Requirement\CollectionInterface) {
-                    $collection->$methodName($arguments);
+                    $collection->$methodName($value);
                 } else {
                     $itemMethods = array_flip(get_class_methods($item));
                     if (isset($itemMethods[$methodName])) {
