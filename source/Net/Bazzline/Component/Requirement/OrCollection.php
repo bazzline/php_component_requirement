@@ -16,6 +16,10 @@ class OrCollection extends AbstractCollection
      */
     public function isMet()
     {
+        if ($this->items->count() == 0) {
+            throw new \RuntimeException('No items set in this collection.');
+        }
+
         foreach ($this->items as $item) {
             if ($item->isMet()) {
                 return true;
