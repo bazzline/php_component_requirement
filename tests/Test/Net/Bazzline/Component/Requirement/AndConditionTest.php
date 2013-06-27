@@ -2,71 +2,71 @@
 
 namespace Test\Net\Bazzline\Component\Requirement;
 
-use Net\Bazzline\Component\Requirement\AndCollection;
+use Net\Bazzline\Component\Requirement\AndCondition;
 
 /**
- * Test for AndCollection
+ * Test for AndCondition
  *
  * @author Jens Wiese
  * @since 2013-06-26
  */
-class AndCollectionTest extends \PHPUnit_Framework_TestCase
+class AndConditionTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var AndCollection */
-    protected $collection;
+    /** @var AndCondition */
+    protected $condition;
 
     /**
      * @inheritdoc
      */
     protected function setUp()
     {
-        $this->collection = new AndCollection();
+        $this->condition = new AndCondition();
     }
 
     /**
      * @expectedException \RuntimeException
      */
-    public function testCollectionFailsWhenNoItemIsProvided()
+    public function testConditionFailsWhenNoItemIsProvided()
     {
-        $this->collection->isMet();
+        $this->condition->isMet();
     }
 
-    public function testCollectionValidatesTrueWhenAllItemsValidate()
+    public function testConditionValidatesTrueWhenAllItemsValidate()
     {
         $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(true);
         $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(true);
 
-        $this->collection->addItem($item1);
-        $this->collection->addItem($item2);
+        $this->condition->addItem($item1);
+        $this->condition->addItem($item2);
 
-        $this->assertTrue($this->collection->isMet());
+        $this->assertTrue($this->condition->isMet());
     }
 
-    public function testCollectionFailsWhenOneItemDoesNotValidate()
+    public function testConditionFailsWhenOneItemDoesNotValidate()
     {
         $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(true);
         $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(false);
 
-        $this->collection->addItem($item1);
-        $this->collection->addItem($item2);
+        $this->condition->addItem($item1);
+        $this->condition->addItem($item2);
 
-        $this->assertFalse($this->collection->isMet());
+        $this->assertFalse($this->condition->isMet());
     }
 
-    public function testCollectionFailsWhenAllItemsDoNotValidate()
+    public function testConditionFailsWhenAllItemsDoNotValidate()
     {
         $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item1->shouldReceive('isMet')->andReturn(false);
         $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
         $item2->shouldReceive('isMet')->andReturn(false);
 
-        $this->collection->addItem($item1);
-        $this->collection->addItem($item2);
+        $this->condition->addItem($item1);
+        $this->condition->addItem($item2);
 
-        $this->assertFalse($this->collection->isMet());
+        $this->assertFalse($this->condition->isMet());
     }
 }

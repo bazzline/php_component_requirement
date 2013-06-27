@@ -2,7 +2,7 @@
 
 namespace Test\Net\Bazzline\Component\Requirement;
 
-use Net\Bazzline\Component\Requirement\AndCollection;
+use Net\Bazzline\Component\Requirement\AndCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
 
 /**
@@ -24,13 +24,13 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $this->requirement = new Requirement();
     }
 
-    public function testPassingOnOfDepencenciesToCollections()
+    public function testPassingOnOfDepencenciesToCondition()
     {
-        $collection = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCollection');
+        $collection = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
         $collection->shouldReceive('setSomething')->with('someValue')->once();
         $collection->shouldReceive('getItems')->andReturn(new \SplObjectStorage());
 
-        $this->requirement->addCollection($collection);
+        $this->requirement->addCondition($collection);
         $this->requirement->__call('setSomething', array('someValue'));
     }
 
@@ -40,11 +40,11 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $item2 = \Mockery::mock(new DummyItem());
         $item2->shouldReceive('setSomething')->with('someValue')->once();
 
-        $collection = new AndCollection();
+        $collection = new AndCondition();
         $collection->addItem($item1);
         $collection->addItem($item2);
 
-        $this->requirement->addCollection($collection);
+        $this->requirement->addCondition($collection);
         $this->requirement->setSomething('someValue');
     }
 }

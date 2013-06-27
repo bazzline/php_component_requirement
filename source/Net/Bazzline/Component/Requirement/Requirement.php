@@ -19,7 +19,7 @@ class Requirement implements RequirementInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    protected $collections;
+    protected $conditions;
 
     /**
      * @author stev leibelt <artodeto@arcor.de>
@@ -28,7 +28,7 @@ class Requirement implements RequirementInterface
      */
     public function __construct()
     {
-        $this->collections = new SplObjectStorage();
+        $this->conditions = new SplObjectStorage();
     }
 
     /**
@@ -36,17 +36,17 @@ class Requirement implements RequirementInterface
      */
     public function addItem(IsMetInterface $item)
     {
-        $collection = new AndCollection();
+        $collection = new AndCondition();
         $collection->addItem($item);
-        $this->addCollection($collection);
+        $this->addCondition($collection);
     }
 
     /**
      * {$inheritDoc}
      */
-    public function addCollection(CollectionInterface $collection)
+    public function addCondition(ConditionInterface $collection)
     {
-        $this->collections->attach($collection);
+        $this->conditions->attach($collection);
     }
 
     /**
@@ -68,8 +68,8 @@ class Requirement implements RequirementInterface
 
         $value = current($arguments);
 
-        foreach ($this->collections as $collection) {
-            $collection->$methodName($value);
+        foreach ($this->conditions as $condition) {
+            $condition->$methodName($value);
         }
     }
 
@@ -78,8 +78,8 @@ class Requirement implements RequirementInterface
      */
     public function isMet()
     {
-        foreach ($this->collections as $collection) {
-            if (!$collection->isMet()) {
+        foreach ($this->conditions as $condition) {
+            if (!$condition->isMet()) {
                 return false;
             }
         }

@@ -6,14 +6,14 @@ use InvalidArgumentException;
 use SplObjectStorage;
 
 /**
- * Class RequirementCollection
+ * Class AbstractCondition
  *
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  * @todo move basic collection stuff to collection
  */
-abstract class AbstractCollection implements IsMetInterface, CollectionInterface
+abstract class AbstractCondition implements IsMetInterface, ConditionInterface
 {
     /**
      * @var \SplObjectStorage
@@ -57,7 +57,7 @@ abstract class AbstractCollection implements IsMetInterface, CollectionInterface
         $value = current($arguments);
 
         foreach ($this->items as $item) {
-            if ($item instanceof \Net\Bazzline\Component\Requirement\CollectionInterface) {
+            if ($item instanceof \Net\Bazzline\Component\Requirement\ConditionInterface) {
                 $item->$methodName($value);
             } else {
                 $itemMethods = array_flip(get_class_methods($item));

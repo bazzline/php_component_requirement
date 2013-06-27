@@ -3,13 +3,13 @@
 namespace Net\Bazzline\Component\Requirement;
 
 /**
- * Class OrCollection
+ * Class OrCondition
  *
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-class OrCollection extends AbstractCollection
+class OrCondition extends AbstractCondition
 {
     /**
      * {$inheritDoc}

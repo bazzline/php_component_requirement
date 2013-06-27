@@ -14,9 +14,9 @@ interface RequirementInterface extends IsMetInterface
     /**
      * Adds a collection to the requirement
      *
-     * @param CollectionInterface $collection
+     * @param ConditionInterface $collection
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
-    public function addCollection(CollectionInterface $collection);
+    public function addCondition(ConditionInterface $collection);
 }

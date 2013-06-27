@@ -3,13 +3,13 @@
 namespace Net\Bazzline\Component\Requirement;
 
 /**
- * Class RequirementCollectionInterface
+ * Class Condition
  *
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-interface CollectionInterface
+interface ConditionInterface
 {
     /**
      * Add an array to the collection.

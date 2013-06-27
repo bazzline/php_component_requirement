@@ -17,8 +17,8 @@ use Example\Table\Items\PerfectHeight;
 use Example\Table\Items\RedColor;
 use Example\Table\Items\StevLeibeltDeveloper;
 use Example\Table\Items\YellowColor;
-use Net\Bazzline\Component\Requirement\AndCollection;
-use Net\Bazzline\Component\Requirement\OrCollection;
+use Net\Bazzline\Component\Requirement\AndCondition;
+use Net\Bazzline\Component\Requirement\OrCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
 
 /**
@@ -40,72 +40,72 @@ class IsAGoodTableRequirement extends Requirement
     public function __construct()
     {
         parent::__construct();
-        $colorCollection = $this->createColorCollection();
-        $featureCollection = $this->createFeatureCollection();
+        $colorCondition = $this->createColorCondition();
+        $featureCondition = $this->createFeatureCondition();
         $perfectHeight = new PerfectHeight();
-        $developerCollection = $this->createDeveloperCollection();
+        $developerCondition = $this->createDeveloperCondition();
 
-        $andCollection = new AndCollection();
-        $andCollection->addItem($colorCollection);
-        $andCollection->addItem($featureCollection);
-        $andCollection->addItem($perfectHeight);
+        $andCondition = new AndCondition();
+        $andCondition->addItem($colorCondition);
+        $andCondition->addItem($featureCondition);
+        $andCondition->addItem($perfectHeight);
 
-        $orCollection = new OrCollection();
-        $orCollection->addItem($developerCollection);
-        $orCollection->addItem($andCollection);
+        $orCondition = new OrCondition();
+        $orCondition->addItem($developerCondition);
+        $orCondition->addItem($andCondition);
 
-        $this->addCollection($orCollection);
+        $this->addCondition($orCondition);
     }
 
     /**
-     * @return OrCollection
+     * @return OrCondition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-26
      */
-    private function createColorCollection()
+    private function createColorCondition()
     {
         $brown = new BrownColor();
         $green = new GreenColor();
         $red = new RedColor();
         $yellow = new YellowColor();
 
-        $collection = new OrCollection();
-        $collection->addItem($brown);
-        $collection->addItem($green);
-        $collection->addItem($red);
-        $collection->addItem($yellow);
+        $condition = new OrCondition();
+        $condition->addItem($brown);
+        $condition->addItem($green);
+        $condition->addItem($red);
+        $condition->addItem($yellow);
 
-        return $collection;
+        return $condition;
     }
 
     /**
-     * @return OrCollection
+     * @return OrCondition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-26
      */
-    private function createFeatureCollection()
+    private function createFeatureCondition()
     {
         $extendable = new ExtendableFeature();
         $foldable = new FoldableFeature();
 
-        $collection = new OrCollection();
-        $collection->addItem($extendable);
-        $collection->addItem($foldable);
+        $condition = new OrCondition();
+        $condition->addItem($extendable);
+        $condition->addItem($foldable);
 
-        return $collection;
+        return $condition;
     }
 
     /**
-     * @return OrCollection
+     * @return OrCondition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-26
      */
-    private function createDeveloperCollection()
+    private function createDeveloperCondition()
     {
-        $collection = new OrCollection();
-        $collection->addItem(new JensWieseDeveloper());
-        $collection->addItem(new StevLeibeltDeveloper());
+        $condition = new OrCondition();
+        $condition->addItem(new JensWieseDeveloper());
+        $condition->addItem(new StevLeibeltDeveloper());
 
-        return $collection;
+        return $condition;
     }
 }
