@@ -32,7 +32,7 @@
         "psr-0": {
             "Net\\Bazzline\\Component\\Requirement\\": "source/",
             "Test\\Net\\Bazzline\\Component\\Requirement\\": "tests/",
-            "Example\\Table\\": "examples/source"
+            "Example\\": "examples/source"
         }
     }
 }

@@ -8,7 +8,6 @@
 namespace Example\Table;
 
 use Example\Table\Items\BrownColor;
-use Example\Table\Items\Developer;
 use Example\Table\Items\ExtendableFeature;
 use Example\Table\Items\FoldableFeature;
 use Example\Table\Items\GreenColor;
