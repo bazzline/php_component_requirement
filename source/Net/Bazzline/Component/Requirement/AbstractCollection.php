@@ -58,7 +58,7 @@ abstract class AbstractCollection implements IsMetInterface, CollectionInterface
 
         foreach ($this->items as $item) {
             if ($item instanceof \Net\Bazzline\Component\Requirement\CollectionInterface) {
-                $item->$methodName($arguments);
+                $item->$methodName($value);
             } else {
                 $itemMethods = array_flip(get_class_methods($item));
                 if (isset($itemMethods[$methodName])) {
