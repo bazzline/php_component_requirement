@@ -35,16 +35,6 @@ class Requirement implements RequirementInterface
     /**
      * {$inheritDoc}
      */
-    public function addItem(IsMetInterface $item)
-    {
-        $condition = new AndCondition();
-        $condition->addItem($item);
-        $this->addCondition($condition);
-    }
-
-    /**
-     * {$inheritDoc}
-     */
     public function addCondition(ConditionInterface $condition)
     {
         $this->conditions->attach($condition);
