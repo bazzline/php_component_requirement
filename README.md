@@ -35,4 +35,4 @@ I created this component to solve the following problem
 
 # Thanks
 
-    * The rumanian stallion ;-) - this is your idea, developed by ourselves :-)
+    * The Mihai Andrei Cosma - this is your idea, developed by ourselves :-)
