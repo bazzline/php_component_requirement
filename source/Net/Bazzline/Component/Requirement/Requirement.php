@@ -3,6 +3,7 @@
 namespace Net\Bazzline\Component\Requirement;
 
 use InvalidArgumentException;
+use RuntimeException;
 use SplObjectStorage;
 
 /**
@@ -78,6 +79,10 @@ class Requirement implements RequirementInterface
      */
     public function isMet()
     {
+        if ($this->conditions->count() == 0) {
+            throw new RuntimeException('No condition set in this requirement.');
+        }
+
         foreach ($this->conditions as $condition) {
             if (!$condition->isMet()) {
                 return false;
