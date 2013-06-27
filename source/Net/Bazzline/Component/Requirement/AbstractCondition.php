@@ -16,7 +16,7 @@ use SplObjectStorage;
 abstract class AbstractCondition implements IsMetInterface, ConditionInterface
 {
     /**
-     * @var \SplObjectStorage
+     * @var \SplObjectStorage|IsMetInterface[]
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
