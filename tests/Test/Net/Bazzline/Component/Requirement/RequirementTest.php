@@ -8,7 +8,7 @@ use Net\Bazzline\Component\Requirement\Requirement;
 /**
  * Test for Requirement class
  *
- * @author Jens Wiese
+ * @author Jens Wiese <jens@howtrueisfalse.de>
  * @since 2013-06-27
  */
 class RequirementTest extends \PHPUnit_Framework_TestCase
@@ -24,7 +24,7 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $this->requirement = new Requirement();
     }
 
-    public function testPassingOnOfDepencenciesToCondition()
+    public function testPassingOnOfDepencenciesToConditions()
     {
         $condition = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
         $condition->shouldReceive('setSomething')->with('someValue')->once();
