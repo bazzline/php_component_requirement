@@ -9,8 +9,8 @@ namespace Example\Table;
 require __DIR__ . '/../../../../vendor/autoload.php';
 
 $tables = array();
-//$tables[] = new Table('black', 'heatable', '40cm', 'BSD daemon');
-//$tables[] = new Table('yellow', 'heatable', '40cm');
+$tables[] = new Table('black', 'heatable', '40cm', 'BSD daemon');
+$tables[] = new Table('yellow', 'heatable', '40cm');
 $tables[] = new Table('orange', 'fooable', '190cm', 'jens wiese');
 
 $requirement = new IsAGoodTableRequirement();
