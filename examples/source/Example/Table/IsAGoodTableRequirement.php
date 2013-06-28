@@ -23,6 +23,11 @@ use Net\Bazzline\Component\Requirement\Requirement;
 /**
  * Class IsAGoodTableRequirement
  *
+ * @method IsAGoodTableRequirement setColor($color) Sets the color (string)
+ * @method IsAGoodTableRequirement setDeveloper($developer) Sets the developer (string)
+ * @method IsAGoodTableRequirement setFeature($feature) Sets the feature (string)
+ * @method IsAGoodTableRequirement setHeight($height) Sets the height (string)
+ *
  * @package Example\Table
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-26
