@@ -43,7 +43,8 @@ abstract class AbstractCondition implements IsMetInterface, ConditionInterface
      *
      * @param string $methodName - name of the method
      * @param mixed $arguments - value
-     * @throws InvalidArgumentException
+     * @return $this
+     * @throws \InvalidArgumentException
      * @author sleibelt
      * @since 2013-06-25
      */
@@ -67,6 +68,8 @@ abstract class AbstractCondition implements IsMetInterface, ConditionInterface
                 }
             }
         }
+
+        return $this;
     }
 
     /**

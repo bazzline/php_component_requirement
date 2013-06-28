@@ -45,7 +45,8 @@ class Requirement implements RequirementInterface
      *
      * @param string $methodName - name of the method
      * @param mixed $arguments - value
-     * @throws InvalidArgumentException
+     * @return $this
+     * @throws \InvalidArgumentException
      * @author sleibelt
      * @since 2013-06-25
      */
@@ -62,6 +63,8 @@ class Requirement implements RequirementInterface
         foreach ($this->conditions as $condition) {
             $condition->$methodName($value);
         }
+
+        return $this;
     }
 
     /**
