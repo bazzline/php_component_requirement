@@ -23,6 +23,13 @@ class Requirement implements RequirementInterface
     protected $conditions;
 
     /**
+     * @var boolean
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
+    protected $isLocked;
+
+    /**
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      * @todo how to avoid that?
@@ -30,6 +37,7 @@ class Requirement implements RequirementInterface
     public function __construct()
     {
         $this->conditions = new SplObjectStorage();
+        $this->isLocked = false;
     }
 
     /**
@@ -37,6 +45,12 @@ class Requirement implements RequirementInterface
      */
     public function addCondition(ConditionInterface $condition)
     {
+        if ($this->isLocked) {
+            throw new RuntimeException(
+                'Requirement is locked, no new condition could be added.'
+            );
+        }
+
         $this->conditions->attach($condition);
 
         return $this;
@@ -85,5 +99,23 @@ class Requirement implements RequirementInterface
         }
 
         return true;
+    }
+
+    /**
+     * {$inheritDoc}
+     */
+    public function isLocked()
+    {
+        return $this->isLocked;
+    }
+
+    /**
+     * {$inheritDoc}
+     */
+    public function lock()
+    {
+        $this->isLocked = true;
+
+        return $this;
     }
 }

@@ -26,7 +26,7 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
 
     public function testPassingOnOfDepencenciesToConditions()
     {
-        $condition = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
+        $condition = $this->createCondition();
         $condition->shouldReceive('setSomething')->with('someValue')->once();
         $condition->shouldReceive('getItems')->andReturn(new \SplObjectStorage());
 
@@ -46,5 +46,42 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
 
         $this->requirement->addCondition($condition);
         $this->requirement->setSomething('someValue');
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
+    public function testIsLocked()
+    {
+        $this->assertFalse($this->requirement->isLocked());
+        $this->requirement->lock();
+        $this->assertTrue($this->requirement->isLocked());
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     * @expectedExceptionMessage Requirement is locked, no new condition could be added.
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
+    public function testLocking()
+    {
+        $condition = $this->createCondition();
+
+        $this->requirement->lock();
+        $this->requirement->addCondition($condition);
+    }
+
+    /**
+     * @return \Mockery\MockInterface
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
+    private function createCondition()
+    {
+        $condition = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
+
+        return $condition;
     }
 }

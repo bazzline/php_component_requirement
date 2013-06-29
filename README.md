@@ -67,3 +67,19 @@ If you want to create a requirement class that assembles itself or use a factory
 ## Thanks
 
 Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
+
+## Version History
+
+    * v1.0.1
+        * Added annotations to example requirement
+        * Added return value $this to magic __call methods of requirement and condition
+        * Added return value $this to addItem method of ConditionInterface
+        * Added return value $this to addCondition method of RequirementInterface
+        * Added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
+        * Updated Readme with explanation of provided examples
+    * v1.0.0
+        * Finished modeling of RequirementInterface (removed addItem)
+        * Finished two examples
+        * Finished unittests
+    * v0.9.0
+        * Finished modeling of IsMetInterface and ConditionInterface

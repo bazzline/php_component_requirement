@@ -13,6 +13,7 @@ interface RequirementInterface extends IsMetInterface
 {
     /**
      * Adds a condition to the requirement
+     * Throws exception if requirement is locked
      *
      * @param ConditionInterface $condition
      * @return $this
@@ -22,5 +23,21 @@ interface RequirementInterface extends IsMetInterface
      */
     public function addCondition(ConditionInterface $condition);
 
+    /**
+     * Test of requirement is locked
+     *
+     * @return boolean
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
     public function isLocked();
+
+    /**
+     * Locks requirement, no condition could be added afterwards
+     *
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-06-29
+     */
+    public function lock();
 }
