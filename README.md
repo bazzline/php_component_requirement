@@ -1,4 +1,4 @@
-## Reason Of Development
+# Reason Of Development
 
 As a php developer, i have to deal with a lot of refactoring tasks day in and day out. Refactoring includes not only code refactoring but also business logic refactoring. A team member right now had figured out a general problem and we all knew that we have to put "the chaos into a cage" because of the following reasons:
 
@@ -9,7 +9,7 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 
 After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0 "version 1.0.0 of php component requirement") pretty soon.
 
-## Common Terms And Names
+# Common Terms And Names
 
 To understand the component, it is worth to know about the used terms and names. We finally decided to use the following ones.
 
@@ -19,9 +19,9 @@ To understand the component, it is worth to know about the used terms and names.
     * "()" are used to represent an and condition: ("foo", "bar") is "foo and bar"
     * "[]" are used to represent an or condition: ["foo", "bar"] is "foo or bar"
 
-## Example
+# Example
 
-### General
+## General
 
 The component is shipped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement"). Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
@@ -32,14 +32,14 @@ The component is shipped with some [examples](https://github.com/stevleibelt/php
     * Create the items and inject them to the right conditions, be aware of the fact that you even can inject conditions into conditions (meaning combine a condition with another)
     * Implement this into an class that extends the Requirement class or let it be assembled via a factory
 
-### The Simple Example
+## The Simple Example
 
 The [simple example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
 
 As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/v1.0.0/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
 The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
 
-### The Table Example
+## The Table Example
 
 The [table example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
 
@@ -48,27 +48,27 @@ This example needs multiple items, a color item, a feature item, a height item a
 If we use the common terms from above to express this requirement, we can write it the following way. [([green,red,brown,yellow],[extendable,foldable],[80cm]),[jens wiese,stev leibelt]].
 It will take some time to became familiar with that kind of expression but it can clearify things up.
 
-## Hints For Using And Developing
+# Hints For Using And Developing
 
 All in all you have to implement a setter method to your item. You can create setter methods in your requirement or simple use annotation. The requirement class and the condition classes are using the magic __call method to hand over the call from the requirement through the condition to the item.  
   
 If you want to create a requirement class that assembles itself or use a factory is a decision you have to make.
 
-## Download And Install
+# Download And Install
 
-### Github
+## Github
 
     git clone https://github.com/stevleibelt/php_component_requirement
 
-### Packagist.org
+## Packagist.org
 
     require: "net_bazzline/component_requirement": "dev-master"
 
-## Thanks
+# Thanks
 
 Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
-## Version History
+# Version History
 
     * v1.0.1
         * Added annotations to example requirement
@@ -83,3 +83,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
         * Finished unittests
     * v0.9.0
         * Finished modeling of IsMetInterface and ConditionInterface
+
+# Todo List
+
+    * Add method to set strength of IsMet condition requirement (currently each condition has to be true)
