@@ -38,6 +38,8 @@ class Requirement implements RequirementInterface
     public function addCondition(ConditionInterface $condition)
     {
         $this->conditions->attach($condition);
+
+        return $this;
     }
 
     /**

@@ -15,8 +15,12 @@ interface RequirementInterface extends IsMetInterface
      * Adds a condition to the requirement
      *
      * @param ConditionInterface $condition
+     * @return $this
+     * @throws \RuntimeException
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
     public function addCondition(ConditionInterface $condition);
+
+    public function isLocked();
 }
