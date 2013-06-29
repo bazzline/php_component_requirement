@@ -32,6 +32,22 @@ The component is shipped with some [examples](https://github.com/stevleibelt/php
     * Create the items and inject them to the right conditions, be aware of the fact that you even can inject conditions into conditions (meaning combine a condition with another)
     * Implement this into an class that extends the Requirement class or let it be assembled via a factory
 
+### The Simple Example
+
+The [simple example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
+
+As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/v1.0.0/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
+The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
+
+### The Table Example
+
+The [table example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
+
+To put the requirement into an sentence, "The requirement is met, if the color of the table is green or red or brown or yellow and the table as the feature to be extendable or foldable and if the table has a height of 80 cm or if the table is developed by jens wiese or stev leibelt.
+This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
+If we use the common terms from above to express this requirement, we can write it the following way. [([green,red,brown,yellow],[extendable,foldable],[80cm]),[jens wiese,stev leibelt]].
+It will take some time to became familiar with that kind of expression but it can clearify things up.
+
 ## Hints For Using And Developing
 
 All in all you have to implement a setter method to your item. You can create setter methods in your requirement or simple use annotation. The requirement class and the condition classes are using the magic __call method to hand over the call from the requirement through the condition to the item.  
