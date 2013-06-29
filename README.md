@@ -13,20 +13,22 @@ After we (take a look to the credits please) tied up the requirements, it took s
 
 To understand the component, it is worth to know about the used terms and names. We finally decided to use the following ones.
 
-    * Requirement: Thats the class you want to work with. Extend it or use it straightaway via a factory. This class represents the buisness logic with all "and's" and "or's"
-    * Condition: After reading and writing business logic, each is full of "or's" or '"and's". Thats why we provide two condition that are used to handle collections of business items (simple rules)
-    * IsMetInterface: To keep it simple, when you implement a business logic or validate against one, you only want to know "is this requirement met or not", so thats what the interface is for. This interface is implemented in the Requirement as well as in the Condition and you have to implement it in your item as well
+    * Requirement: Thats the class you want to work with. Extend it or use it straightaway via a factory. This class represents the business logic with all "and's" and "or's"
+    * Condition: After reading and writing business logic, each is full of "or's" or '"and's". That's why we provide two condition that are used to handle collections of business items (simple rules)
+    * IsMetInterface: To keep it simple, when you implement a business logic or validate against one, you only want to know "is this requirement met or not", so that's what the interface is for. This interface is implemented in the Requirement as well as in the Condition and you have to implement it in your item as well
     * "()" are used to represent an and condition: ("foo", "bar") is "foo and bar"
     * "[]" are used to represent an or condition: ["foo", "bar"] is "foo or bar"
 
 ## Example
 
-The component is shiped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement"). Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
+### General
+
+The component is shipped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement"). Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
     * Try to sum things up by writing a sentence like: "The user mets our requirement if he is interested in OOP or big data and if he loves open source software, has no problem to read man pages or use his favorit internet searchengine or if he is already a maintainer or a contributor to an existing open source project"
-    * Slice out the items that matters: "OOP", "big data", "loves open source", "read man pages", "use favorit internet searchengine", "maintainer", "contributer"
-    * Create classes for each item that implements the IsMetInterface and that provides a usefull setter method
-    * Collect the items into conditions: [(["OOP", "big data"], "loves open source"["read man pages", "use favorit internet searchengine"]), ["maintainer", "contributer"]]
+    * Slice out the items that matters: "OOP", "big data", "loves open source", "read man pages", "use favorite internet searchengine", "maintainer", "contributor"
+    * Create classes for each item that implements the IsMetInterface and that provides a unequal setter method
+    * Collect the items into conditions: [(["OOP", "big data"], "loves open source"["read man pages", "use favorite internet searchengine"]), ["maintainer", "contributor"]]
     * Create the items and inject them to the right conditions, be aware of the fact that you even can inject conditions into conditions (meaning combine a condition with another)
     * Implement this into an class that extends the Requirement class or let it be assembled via a factory
 
@@ -34,7 +36,7 @@ The component is shiped with some [examples](https://github.com/stevleibelt/php_
 
 All in all you have to implement a setter method to your item. You can create setter methods in your requirement or simple use annotation. The requirement class and the condition classes are using the magic __call method to hand over the call from the requirement through the condition to the item.  
   
-If you want to create a requirement class that assambles itself or use a factory is a decision you have to make.
+If you want to create a requirement class that assembles itself or use a factory is a decision you have to make.
 
 ## Download And Install
 
