@@ -16,6 +16,7 @@ interface ConditionInterface
      * If an instance is already added, it will be replaced.
      *
      * @param IsMetInterface $item
+     * @return $this
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */

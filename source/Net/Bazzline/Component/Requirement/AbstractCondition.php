@@ -36,6 +36,8 @@ abstract class AbstractCondition implements IsMetInterface, ConditionInterface
     public function addItem(IsMetInterface $item)
     {
         $this->items->attach($item);
+
+        return $this;
     }
 
     /**
