@@ -70,6 +70,8 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Version History
 
+    * next
+        * Refactored locking by using [lock component](https://packagist.org/packages/net_bazzline/component_lock "lock component for php")
     * v1.0.1
         * Added annotations to example requirement
         * Added return value $this to magic __call methods of requirement and condition

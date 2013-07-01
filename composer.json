@@ -21,7 +21,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "net_bazzline/component_lock": "1.0.*@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
