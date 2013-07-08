@@ -4,7 +4,7 @@
     "description": "php component requirement",
     "keywords": ["php", "net_bazzline", "component", "requirement"],
     "homepage": "https://github.com/stevleibelt/php_component_requirement",
-    "license": "GPLv3",
+    "license": "LGPLv3",
     "authors": [
 	    {
             "name": "Stev Leibelt",
