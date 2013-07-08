@@ -36,6 +36,7 @@ interface RequirementInterface extends IsMetInterface
      * Locks requirement, no condition could be added afterwards
      *
      * @return $this
+     * @throws \RuntimeException
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-29
      */

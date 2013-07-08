@@ -3,6 +3,7 @@
 namespace Net\Bazzline\Component\Requirement;
 
 use InvalidArgumentException;
+use Net\Bazzline\Component\Lock\RuntimeLock;
 use RuntimeException;
 use SplObjectStorage;
 
@@ -23,11 +24,11 @@ class Requirement implements RequirementInterface
     protected $conditions;
 
     /**
-     * @var boolean
+     * @var \Net\Bazzline\Component\Lock\RuntimeLock
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-29
      */
-    protected $isLocked;
+    protected $lock;
 
     /**
      * @author stev leibelt <artodeto@arcor.de>
@@ -37,7 +38,8 @@ class Requirement implements RequirementInterface
     public function __construct()
     {
         $this->conditions = new SplObjectStorage();
-        $this->isLocked = false;
+        $this->lock = new RuntimeLock();
+        $this->lock->setName(get_class($this));
     }
 
     /**
@@ -45,7 +47,7 @@ class Requirement implements RequirementInterface
      */
     public function addCondition(ConditionInterface $condition)
     {
-        if ($this->isLocked) {
+        if ($this->lock->isLocked()) {
             throw new RuntimeException(
                 'Requirement is locked, no new condition could be added.'
             );
@@ -89,7 +91,9 @@ class Requirement implements RequirementInterface
     public function isMet()
     {
         if ($this->conditions->count() == 0) {
-            throw new RuntimeException('No condition set in this requirement.');
+            throw new RuntimeException(
+                'No condition set in this requirement.'
+            );
         }
 
         foreach ($this->conditions as $condition) {
@@ -106,7 +110,7 @@ class Requirement implements RequirementInterface
      */
     public function isLocked()
     {
-        return $this->isLocked;
+        return $this->lock->isLocked();
     }
 
     /**
@@ -114,7 +118,7 @@ class Requirement implements RequirementInterface
      */
     public function lock()
     {
-        $this->isLocked = true;
+        $this->lock->acquire();
 
         return $this;
     }
