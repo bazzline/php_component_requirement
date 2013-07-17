@@ -7,7 +7,7 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 * We want to have a generic component where you can reuse business items
 * Since business logic can became nested, the component should handle this
 
-After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0 "version 1.0.0 of php component requirement") pretty soon.
+After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
 
 # Common Terms And Names
 
@@ -34,14 +34,14 @@ The component is shipped with some [examples](https://github.com/stevleibelt/php
 
 ## The Simple Example
 
-The [simple example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
+The [simple example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
 
-As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/v1.0.0/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
+As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/1.0.2/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
 The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
 
 ## The Table Example
 
-The [table example](https://github.com/stevleibelt/php_component_requirement/tree/v1.0.0/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
+The [table example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
 
 To put the requirement into an sentence, "The requirement is met, if the color of the table is green or red or brown or yellow and the table as the feature to be extendable or foldable and if the table has a height of 80 cm or if the table is developed by jens wiese or stev leibelt.
 This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
@@ -71,19 +71,20 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * next
+* 1.0.2
     * Refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
-* v1.0.1
+* 1.0.1
     * Added annotations to example requirement
     * Added return value $this to magic __call methods of requirement and condition
     * Added return value $this to addItem method of ConditionInterface
     * Added return value $this to addCondition method of RequirementInterface
     * Added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
     * Updated Readme with explanation of provided examples
-* v1.0.0
+* 1.0.0
     * Finished modeling of RequirementInterface (removed addItem)
     * Finished two examples
     * Finished unittests
-* v0.9.0
+* 0.9.0
     * Finished modeling of IsMetInterface and ConditionInterface
 
 # Todo List
