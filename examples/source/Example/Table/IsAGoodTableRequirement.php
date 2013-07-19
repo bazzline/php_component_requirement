@@ -2,7 +2,6 @@
 /**
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-26
- * @todo add annotation for setter methods
  */
 
 namespace Example\Table;

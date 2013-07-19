@@ -33,7 +33,6 @@ class Requirement implements RequirementInterface
     /**
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
-     * @todo how to avoid that?
      */
     public function __construct()
     {

@@ -11,7 +11,6 @@ use SplObjectStorage;
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
- * @todo move basic condition stuff to collection
  */
 abstract class AbstractCondition implements IsMetInterface, ConditionInterface
 {
