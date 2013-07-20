@@ -68,7 +68,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
         $value = current($arguments);
 
         foreach ($this->items as $item) {
-            if ($item instanceof \Net\Bazzline\Component\Requirement\ConditionInterface) {
+            if ($item instanceof ConditionInterface) {
                 $item->$methodName($value);
             } else {
                 if ($this->itemSupportsMethodCall($item, $methodName)) {
