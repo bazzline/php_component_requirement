@@ -11,7 +11,7 @@ use RuntimeException;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-class AndCondition extends AbstractCondition
+class AndCondition extends ConditionAbstract
 {
     /**
      * {$inheritDoc}

@@ -6,14 +6,13 @@ use InvalidArgumentException;
 use SplObjectStorage;
 
 /**
- * Class AbstractCondition
+ * Class ConditionAbstract
  *
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
- * @todo rename to ConditionAbstract
  */
-abstract class AbstractCondition implements IsMetInterface, ConditionInterface
+abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
 {
     /**
      * @var \SplObjectStorage|IsMetInterface[]
