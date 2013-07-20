@@ -11,6 +11,7 @@ use SplObjectStorage;
  * @package Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
+ * @todo rename to ConditionAbstract
  */
 abstract class AbstractCondition implements IsMetInterface, ConditionInterface
 {
@@ -20,6 +21,13 @@ abstract class AbstractCondition implements IsMetInterface, ConditionInterface
      * @since 2013-06-25
      */
     protected $items;
+
+    /**
+     * @var array
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-20
+     */
+    protected $classMethodsPerItem;
 
     /**
      * Constructor of the class
@@ -62,6 +70,10 @@ abstract class AbstractCondition implements IsMetInterface, ConditionInterface
             if ($item instanceof \Net\Bazzline\Component\Requirement\ConditionInterface) {
                 $item->$methodName($value);
             } else {
+                //is array empty?
+                // -> fill array
+                //test in array
+                //move to separate method
                 $itemMethods = array_flip(get_class_methods($item));
                 if (isset($itemMethods[$methodName])) {
                     $item->$methodName($value);
