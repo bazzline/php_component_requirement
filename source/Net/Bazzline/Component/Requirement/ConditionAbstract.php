@@ -34,6 +34,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function __construct()
     {
         $this->items = new SplObjectStorage();
+        $this->classMethodsPerItem = array();
     }
 
     /**
@@ -42,6 +43,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function addItem(IsMetInterface $item)
     {
         $this->items->attach($item);
+        $this->classMethodsPerItem = array();
 
         return $this;
     }
@@ -69,12 +71,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
             if ($item instanceof \Net\Bazzline\Component\Requirement\ConditionInterface) {
                 $item->$methodName($value);
             } else {
-                //is array empty?
-                // -> fill array
-                //test in array
-                //move to separate method
-                $itemMethods = array_flip(get_class_methods($item));
-                if (isset($itemMethods[$methodName])) {
+                if ($this->itemSupportsMethodCall($item, $methodName)) {
                     $item->$methodName($value);
                     $this->addItem($item);
                 }
@@ -90,5 +87,26 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * Checks if item implements method name
+     *
+     * @param IsMetInterface $item
+     * @param string $methodName
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-20
+     */
+    protected function itemSupportsMethodCall(IsMetInterface $item, $methodName)
+    {
+        $itemHash = spl_object_hash($item);
+
+        if (empty($this->classMethodsPerItem)) {
+            $itemMethods = array_flip(get_class_methods($item));
+            $this->classMethodsPerItem[$itemHash] = $itemMethods;
+        }
+
+        return (isset($this->classMethodsPerItem[$itemHash][$methodName]));
     }
 }
