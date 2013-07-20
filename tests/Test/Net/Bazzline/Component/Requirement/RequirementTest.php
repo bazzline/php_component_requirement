@@ -4,6 +4,7 @@ namespace Test\Net\Bazzline\Component\Requirement;
 
 use Net\Bazzline\Component\Requirement\AndCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
+use Mockery;
 
 /**
  * Test for Requirement class
@@ -24,6 +25,15 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $this->requirement = new Requirement();
     }
 
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-07-29
+     */
+    protected function tearDown()
+    {
+        Mockery::close();
+    }
+
     public function testPassingOnOfDepencenciesToConditions()
     {
         $condition = $this->createCondition();
@@ -36,8 +46,8 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
 
     public function testPassingOnOfDepencenciesToItems()
     {
-        $item1 = \Mockery::mock(new DummyItem());
-        $item2 = \Mockery::mock(new DummyItem());
+        $item1 = Mockery::mock(new DummyItem());
+        $item2 = Mockery::mock(new DummyItem());
         $item2->shouldReceive('setSomething')->with('someValue')->once();
 
         $condition = new AndCondition();
@@ -80,7 +90,7 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      */
     private function createCondition()
     {
-        $condition = \Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
+        $condition = Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
 
         return $condition;
     }
