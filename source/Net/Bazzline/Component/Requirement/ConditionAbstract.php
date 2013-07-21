@@ -26,7 +26,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-07-20
      */
-    protected $classMethodsPerItem;
+    private $methodNamesPerItem;
 
     /**
      * Constructor of the class
@@ -34,7 +34,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function __construct()
     {
         $this->items = new SplObjectStorage();
-        $this->classMethodsPerItem = array();
+        $this->methodNamesPerItem = array();
     }
 
     /**
@@ -43,7 +43,6 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function addItem(IsMetInterface $item)
     {
         $this->items->attach($item);
-        $this->classMethodsPerItem = array();
 
         return $this;
     }
@@ -73,7 +72,6 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
             } else {
                 if ($this->itemSupportsMethodCall($item, $methodName)) {
                     $item->$methodName($value);
-                    $this->addItem($item);
                 }
             }
         }
@@ -100,13 +98,14 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
      */
     protected function itemSupportsMethodCall(IsMetInterface $item, $methodName)
     {
-        $itemHash = spl_object_hash($item);
+        $hash = spl_object_hash($item);
 
-        if (empty($this->classMethodsPerItem)) {
+        if (empty($this->methodNamesPerItem)
+            || !isset($this->methodNamesPerItem[$hash])) {
             $itemMethods = array_flip(get_class_methods($item));
-            $this->classMethodsPerItem[$itemHash] = $itemMethods;
+            $this->methodNamesPerItem[$hash] = $itemMethods;
         }
 
-        return (isset($this->classMethodsPerItem[$itemHash][$methodName]));
+        return (isset($this->methodNamesPerItem[$hash][$methodName]));
     }
 }
