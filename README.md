@@ -70,24 +70,24 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Version History
 
-* next
+* [next](https://github.com/stevleibelt/php_component_requirement)
     * investigate if we can use gerkin to create requirements
-* 1.0.3
+* [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
     * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
-* 1.0.2
+* [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2)
     * Refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
-* 1.0.1
+* [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1)
     * Added annotations to example requirement
     * Added return value $this to magic __call methods of requirement and condition
     * Added return value $this to addItem method of ConditionInterface
     * Added return value $this to addCondition method of RequirementInterface
     * Added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
     * Updated Readme with explanation of provided examples
-* 1.0.0
+* [1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.0)
     * Finished modeling of RequirementInterface (removed addItem)
     * Finished two examples
     * Finished unittests
-* 0.9.0
+* [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0)
     * Finished modeling of IsMetInterface and ConditionInterface
 
 # Todo List
