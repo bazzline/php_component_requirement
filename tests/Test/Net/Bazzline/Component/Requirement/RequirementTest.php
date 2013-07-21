@@ -25,15 +25,6 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
         $this->requirement = new Requirement();
     }
 
-    /**
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-07-29
-     */
-    protected function tearDown()
-    {
-        Mockery::close();
-    }
-
     public function testPassingOnOfDepencenciesToConditions()
     {
         $condition = $this->createCondition();
@@ -48,11 +39,18 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
     {
         $item1 = Mockery::mock(new DummyItem());
         $item2 = Mockery::mock(new DummyItem());
+        $item3 = Mockery::mock('Net\Bazzline\Component\Requirement\IsMetInterface');
+        $item4 = Mockery::mock('Test\Net\Bazzline\Component\Requirement\DummyItem');
+
+        $item1->shouldReceive('setSomething')->with('someValue')->once();
         $item2->shouldReceive('setSomething')->with('someValue')->once();
+        $item4->shouldReceive('setSomething')->with('someValue')->once();
 
         $condition = new AndCondition();
         $condition->addItem($item1);
         $condition->addItem($item2);
+        $condition->addItem($item3);
+        $condition->addItem($item4);
 
         $this->requirement->addCondition($condition);
         $this->requirement->setSomething('someValue');
