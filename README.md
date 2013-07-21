@@ -71,7 +71,6 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * [next](https://github.com/stevleibelt/php_component_requirement)
-    * investigate if we can use gerkin to create requirements
 * [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
     * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
 * [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2)
@@ -92,4 +91,5 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Todo List
 
+* Investigate if we can use gherkin to create requirements
 * Add method to set strength of IsMet condition requirement (currently each condition has to be true)
