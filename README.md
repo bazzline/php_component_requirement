@@ -71,8 +71,9 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * next
-    * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
     * investigate if we can use gerkin to create requirements
+* 1.0.3
+    * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
 * 1.0.2
     * Refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
 * 1.0.1
