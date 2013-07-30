@@ -42,7 +42,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function addCondition(ConditionInterface $condition)
     {
@@ -85,7 +85,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function isMet()
     {
@@ -105,7 +105,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function isLocked()
     {
@@ -113,7 +113,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function lock()
     {

@@ -42,7 +42,7 @@ class Color implements IsMetInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function isMet()
     {

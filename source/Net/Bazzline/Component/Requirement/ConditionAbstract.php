@@ -38,7 +38,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function addItem(IsMetInterface $item)
     {
@@ -80,7 +80,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function getItems()
     {

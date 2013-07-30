@@ -14,7 +14,7 @@ use RuntimeException;
 class OrCondition extends ConditionAbstract
 {
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function isMet()
     {

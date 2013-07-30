@@ -42,7 +42,7 @@ class Developer implements IsMetInterface
     }
 
     /**
-     * {$inheritDoc}
+     * {$inheritdoc}
      */
     public function isMet()
     {
