@@ -23,7 +23,7 @@ class LengthValidator extends AbstractTableValidator
     public function isMet()
     {
         $length = $this->table->getLength();
-        $maxLength = 160;
+        $maxLength = 210;
         $minLength = 70;
 
         return (($length >= $minLength) && ($length <= $maxLength));
