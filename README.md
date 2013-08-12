@@ -39,6 +39,11 @@ The [simple example](https://github.com/stevleibelt/php_component_requirement/tr
 As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/1.0.2/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
 The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
 
+```php
+//to start the example
+php examples/source/Example/Simple/Example.php
+```
+
 ## The Table Example
 
 The [table example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
@@ -47,6 +52,24 @@ To put the requirement into an sentence, "The requirement is met, if the color o
 This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
 If we use the common terms from above to express this requirement, we can write it the following way. [([green,red,brown,yellow],[extendable,foldable],[80cm]),[jens wiese,stev leibelt]].
 It will take some time to became familiar with that kind of expression but it can clearify things up.
+
+```php
+//to start the example
+php examples/source/Example/Table/Example.php
+```
+
+## The Validator Example
+
+The [validator example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4/examples/source/Example/Validator "php component requirement - table validator") is using the component as validator.
+
+The example shows how to use the component as a validator by defining simple validators, adding them to a collection and use the requirement class as validator.
+Only if all validators are returning a positive "isMet", the table has passed the validator.
+Currently, no stack trace is available (check upcoming release) so the only feedback right now is, that the table is not valid.
+
+```php
+//to start the example
+php examples/source/Example/Validator/Example.php
+```
 
 # Hints For Using And Developing
 
@@ -71,6 +94,10 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * [next](https://github.com/stevleibelt/php_component_requirement)
+    * add trigger to run through all isMet-Items and add all fails to the stack trace
+    * add stack trace for retrieving the first isMet-Item that returns false
+* [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
+    * add example to use the component as validator
 * [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
     * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
 * [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2)
