@@ -10,7 +10,7 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
 
 The build status of the current master branch is tracked by Travis CI: 
-[![Build Status](https://travis-ci.org/stevleibelt/php_component_logger.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_logger)
+[![Build Status](https://travis-ci.org/stevleibelt/php_component_requirement.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_requirement)
 
 # Common Terms And Names
 
