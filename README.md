@@ -99,6 +99,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 * [next](https://github.com/stevleibelt/php_component_requirement)
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add stack trace for retrieving the first isMet-Item that returns false
+    * implement mechanism to activate or deactivate items or the whole requirement
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
     * add example to use the component as validator
 * [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
@@ -123,3 +124,4 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 * Investigate if we can use gherkin to create requirements
 * Add method to set strength of IsMet condition requirement (currently each condition has to be true)
+* Updated readme
