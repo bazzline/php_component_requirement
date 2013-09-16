@@ -78,6 +78,18 @@ Currently, no stack trace is available (check upcoming release) so the only feed
 php examples/source/Example/Validator/Example.php
 ```
 
+## The Shutdown Example
+
+The [shutdown example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5/examples/source/Example/WithShutdown/Example.php "php component requirement - with shutdown example") is using the ability to shutdown a whole requirement.
+
+This example shows how to use the shutdown implementation.
+First, the requirement is evaluated with an item, that always returns *false*. If a shutdown is requested, the behavior changes and the evaluation now always returns true.
+
+```php
+//to start the example
+php examples/source/Example/WithShutdown/Example.php
+```
+
 # Hints For Using And Developing
 
 All in all you have to implement a setter method to your item. You can create setter methods in your requirement or simple use annotation. The requirement class and the condition classes are using the magic __call method to hand over the call from the requirement through the condition to the item.  
