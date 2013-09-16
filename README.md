@@ -6,11 +6,13 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 * After we found strange parts of code, we want to put that into a sentence to spot the business logic
 * We want to have a generic component where you can reuse business items
 * Since business logic can became nested, the component should handle this
-
-After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
+* Add simple way to prevent requirement from future changes (added by locking in [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1))
+* Add simple way to disable requirement evaluation (added by shutdown in [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5))
 
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/stevleibelt/php_component_requirement.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_requirement)
+
+After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
 
 # Common Terms And Names
 
@@ -26,7 +28,9 @@ To understand the component, it is worth to know about the used terms and names.
 
 ## General
 
-The component is shipped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement"). Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
+The component is shipped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement").
+
+Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
 * Try to sum things up by writing a sentence like: "The user mets our requirement if he is interested in OOP or big data and if he loves open source software, has no problem to read man pages or use his favorit internet searchengine or if he is already a maintainer or a contributor to an existing open source project"
 * Slice out the items that matters: "OOP", "big data", "loves open source", "read man pages", "use favorite internet searchengine", "maintainer", "contributor"
@@ -100,7 +104,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add stack trace for retrieving the first isMet-Item that returns false
     * implement mechanism to enable or disable evaluation of condition by isMet method call
-* [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
+* [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
     * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
     * add example to use the component as validator
