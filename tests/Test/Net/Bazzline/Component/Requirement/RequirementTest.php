@@ -93,6 +93,22 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-16
+     */
+    public function testShutdown()
+    {
+        $condition = $this->createCondition();
+        $condition->shouldReceive('isMet')
+            ->never();
+
+        $this->requirement->addCondition($condition);
+        $this->requirement->shutdown();
+
+        $this->assertTrue($this->requirement->isMet());
+    }
+
+    /**
      * @return \Mockery\MockInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-29
