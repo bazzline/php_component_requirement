@@ -82,6 +82,17 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-16
+     */
+    public function testIsShutdown()
+    {
+        $this->assertFalse($this->requirement->isShutdown());
+        $this->requirement->shutdown();
+        $this->assertTrue($this->requirement->isShutdown());
+    }
+
+    /**
      * @return \Mockery\MockInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-29

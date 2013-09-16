@@ -43,7 +43,8 @@ interface RequirementInterface extends IsMetInterface
     public function lock();
 
     /**
-     * Shutdown requirement, no condition will be evaluated afterwards
+     * Shutdown requirement, no condition will be evaluated afterwards.
+     * That means, true is returned immediately.
      *
      * @return $this
      * @author stev leibelt <artodeto@arcor.de>
