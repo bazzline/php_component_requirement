@@ -4,6 +4,7 @@ namespace Net\Bazzline\Component\Requirement;
 
 use InvalidArgumentException;
 use Net\Bazzline\Component\Lock\RuntimeLock;
+use Net\Bazzline\Component\Shutdown\RuntimeShutdown;
 use RuntimeException;
 use SplObjectStorage;
 
@@ -31,6 +32,13 @@ class Requirement implements RequirementInterface
     protected $lock;
 
     /**
+     * @var \Net\Bazzline\Component\Shutdown\RuntimeShutdown
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-16
+     */
+    protected $shutdown;
+
+    /**
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
@@ -39,6 +47,8 @@ class Requirement implements RequirementInterface
         $this->conditions = new SplObjectStorage();
         $this->lock = new RuntimeLock();
         $this->lock->setName(get_class($this));
+        $this->shutdown = new RuntimeShutdown();
+        $this->shutdown->setName(get_class($this));
     }
 
     /**
@@ -89,19 +99,23 @@ class Requirement implements RequirementInterface
      */
     public function isMet()
     {
-        if ($this->conditions->count() == 0) {
-            throw new RuntimeException(
-                'No condition set in this requirement.'
-            );
-        }
-
-        foreach ($this->conditions as $condition) {
-            if (!$condition->isMet()) {
-                return false;
+        if ($this->isShutdown()) {
+            return true;
+        } else {
+            if ($this->conditions->count() == 0) {
+                throw new RuntimeException(
+                    'No condition set in this requirement.'
+                );
             }
-        }
 
-        return true;
+            foreach ($this->conditions as $condition) {
+                if (!$condition->isMet()) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 
     /**
@@ -120,5 +134,21 @@ class Requirement implements RequirementInterface
         $this->lock->acquire();
 
         return $this;
+    }
+
+    /**
+     * {$inheritdoc}
+     */
+    public function shutdown()
+    {
+        return $this->shutdown->request();
+    }
+
+    /**
+     * {$inheritdoc}
+     */
+    public function isShutdown()
+    {
+        return $this->shutdown->isRequested();
     }
 }
