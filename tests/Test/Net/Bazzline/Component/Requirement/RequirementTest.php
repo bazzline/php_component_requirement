@@ -12,7 +12,7 @@ use Mockery;
  * @author Jens Wiese <jens@howtrueisfalse.de>
  * @since 2013-06-27
  */
-class RequirementTest extends \PHPUnit_Framework_TestCase
+class RequirementTest extends TestCase
 {
     /** @var Requirement */
     protected $requirement;
@@ -22,12 +22,12 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->requirement = new Requirement();
+        $this->requirement = $this->getNewRequirement();
     }
 
-    public function testPassingOnOfDepencenciesToConditions()
+    public function testPassingOnOfDependenciesToConditions()
     {
-        $condition = $this->createCondition();
+        $condition = $this->getMockAndCondition();
         $condition->shouldReceive('setSomething')->with('someValue')->once();
         $condition->shouldReceive('getItems')->andReturn(new \SplObjectStorage());
 
@@ -75,7 +75,7 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      */
     public function testLocking()
     {
-        $condition = $this->createCondition();
+        $condition = $this->getMockAndCondition();
 
         $this->requirement->lock();
         $this->requirement->addCondition($condition);
@@ -98,7 +98,7 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      */
     public function testDisable()
     {
-        $condition = $this->createCondition();
+        $condition = $this->getMockAndCondition();
         $condition->shouldReceive('isMet')
             ->never();
 
@@ -114,10 +114,10 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetConditions()
     {
-        $conditionOne = $this->createCondition()
+        $conditionOne = $this->getMockAndCondition()
             ->shouldReceive('isMet')
             ->never();
-        $conditionTwo = $this->createCondition()
+        $conditionTwo = $this->getMockAndCondition()
             ->shouldReceive('isMet')
             ->never();
         $expectedConditions = array(
@@ -133,17 +133,5 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
             $expectedConditions,
             (array) $this->requirement->getConditions()
         );
-    }
-
-    /**
-     * @return \Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AndCondition
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-06-29
-     */
-    private function createCondition()
-    {
-        $condition = Mockery::mock('Net\Bazzline\Component\Requirement\AndCondition');
-
-        return $condition;
     }
 }
