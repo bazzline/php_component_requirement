@@ -4,14 +4,14 @@
  * @since 2013-09-19
  */
 
-namespace Example\WithShutdown;
+namespace Example\WithDisabled;
 
 use Net\Bazzline\Component\Requirement\IsMetInterface;
 
 /**
  * Class WillFailItem
  *
- * @package Example\WithShutdown
+ * @package Example\WithDisabled
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-09-16
  */
