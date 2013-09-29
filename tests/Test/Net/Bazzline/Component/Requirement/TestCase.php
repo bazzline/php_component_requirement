@@ -6,6 +6,7 @@
 
 namespace Test\Net\Bazzline\Component\Requirement;
 
+use Net\Bazzline\Component\Requirement\OrCondition;
 use Net\Bazzline\Component\Requirement\AndCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
 use Mockery;
@@ -47,6 +48,26 @@ class TestCase extends PHPUnit_Framework_TestCase
     protected function getNewAndCondition()
     {
         return new AndCondition();
+    }
+
+    /**
+     * @return OrCondition
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function getNewOrCondition()
+    {
+        return new OrCondition();
+    }
+
+    /**
+     * @return Mockery\Mock|\Net\Bazzline\Component\Requirement\IsMetInterface
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function getMockItem()
+    {
+        return Mockery::mock('Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
     }
 
     /**

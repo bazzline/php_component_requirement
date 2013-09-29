@@ -10,7 +10,7 @@ use Net\Bazzline\Component\Requirement\OrCondition;
  * @author Jens Wiese
  * @since 2013-06-26
  */
-class OrConditionTest extends \PHPUnit_Framework_TestCase
+class OrConditionTest extends TestCase
 {
     /** @var OrCondition */
     protected $condition;
@@ -20,7 +20,7 @@ class OrConditionTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->condition = new OrCondition();
+        $this->condition = $this->getNewOrCondition();
     }
 
     /**
@@ -34,9 +34,9 @@ class OrConditionTest extends \PHPUnit_Framework_TestCase
 
     public function testConditionValidatesTrueWhenAtLeastOneItemValidates()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item1 = $this->getMockItem();
         $item1->shouldReceive('isMet')->andReturn(false);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item2 = $this->getMockItem();
         $item2->shouldReceive('isMet')->andReturn(true);
 
         $this->condition->addItem($item1);
@@ -47,9 +47,9 @@ class OrConditionTest extends \PHPUnit_Framework_TestCase
 
     public function testConditionFailsWhenNoItemValidates()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item1 = $this->getMockItem();
         $item1->shouldReceive('isMet')->andReturn(false);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item2 = $this->getMockItem();
         $item2->shouldReceive('isMet')->andReturn(false);
 
         $this->condition->addItem($item1);
@@ -60,9 +60,9 @@ class OrConditionTest extends \PHPUnit_Framework_TestCase
 
     public function testConditionValidatesTrueWhenAllItemsValidate()
     {
-        $item1 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item1 = $this->getMockItem();
         $item1->shouldReceive('isMet')->andReturn(true);
-        $item2 = \Mockery::mock('\Net\Bazzline\Component\Requirement\IsMetInterface')->shouldDeferMissing();
+        $item2 = $this->getMockItem();
         $item2->shouldReceive('isMet')->andReturn(true);
 
         $this->condition->addItem($item1);
