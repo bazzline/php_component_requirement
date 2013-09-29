@@ -21,4 +21,6 @@ interface IsDisabledInterface
      * @since 2013-09-29
      */
     public function disable();
+
+    //@TODO implement isDisabled
 }

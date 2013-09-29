@@ -32,11 +32,11 @@ class Requirement implements RequirementInterface
     protected $lock;
 
     /**
-     * @var \Net\Bazzline\Component\Shutdown\RuntimeShutdown
+     * @var bool
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-09-16
      */
-    protected $shutdown;
+    protected $isDisabled;
 
     /**
      * @author stev leibelt <artodeto@arcor.de>
@@ -47,8 +47,8 @@ class Requirement implements RequirementInterface
         $this->conditions = new SplObjectStorage();
         $this->lock = new RuntimeLock();
         $this->lock->setName(get_class($this));
-        $this->shutdown = new RuntimeShutdown();
-        $this->shutdown->setName(get_class($this));
+        $this->isDisabled = new RuntimeShutdown();
+        $this->isDisabled->setName(get_class($this));
     }
 
     /**
@@ -139,9 +139,9 @@ class Requirement implements RequirementInterface
     /**
      * {$inheritdoc}
      */
-    public function shutdown()
+    public function isDisabled()
     {
-        return $this->shutdown->request();
+        return $this->isDisabled->request();
     }
 
     /**
@@ -149,6 +149,18 @@ class Requirement implements RequirementInterface
      */
     public function isShutdown()
     {
-        return $this->shutdown->isRequested();
+        return $this->isDisabled->isRequested();
+    }
+
+    /**
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function disable()
+    {
+        $this->isDisabled = true;
+
+        return $this;
     }
 }

@@ -41,21 +41,4 @@ interface RequirementInterface extends IsDisabledInterface, IsMetInterface
      * @since 2013-06-29
      */
     public function lock();
-
-    /**
-     * Shutdown requirement, no condition will be evaluated afterwards.
-     * That means, true is returned immediately.
-     *
-     * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-09-16
-     */
-    public function shutdown();
-
-    /**
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-09-16
-     */
-    public function isShutdown();
 }
