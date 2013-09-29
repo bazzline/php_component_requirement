@@ -12,8 +12,15 @@ use SplObjectStorage;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
+abstract class ConditionAbstract implements IsDisabledInterface, IsMetInterface, ConditionInterface
 {
+    /**
+     * @var bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected $isDisabled;
+
     /**
      * @var \SplObjectStorage|IsMetInterface[]
      * @author stev leibelt <artodeto@arcor.de>
@@ -33,6 +40,7 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
      */
     public function __construct()
     {
+        $this->isDisabled = false;
         $this->items = new SplObjectStorage();
         $this->methodNamesPerItem = array();
     }
@@ -85,6 +93,18 @@ abstract class ConditionAbstract implements IsMetInterface, ConditionInterface
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * @return $this
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function disable()
+    {
+        $this->isDisabled = true;
+
+        return $this;
     }
 
     /**
