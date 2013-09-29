@@ -85,25 +85,25 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-09-16
      */
-    public function testIsShutdown()
+    public function testIsDisabled()
     {
-        $this->assertFalse($this->requirement->isShutdown());
-        $this->requirement->shutdown();
-        $this->assertTrue($this->requirement->isShutdown());
+        $this->assertFalse($this->requirement->isDisabled());
+        $this->requirement->disable();
+        $this->assertTrue($this->requirement->isDisabled());
     }
 
     /**
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-09-16
      */
-    public function testShutdown()
+    public function testDisable()
     {
         $condition = $this->createCondition();
         $condition->shouldReceive('isMet')
             ->never();
 
         $this->requirement->addCondition($condition);
-        $this->requirement->shutdown();
+        $this->requirement->disable();
 
         $this->assertTrue($this->requirement->isMet());
     }

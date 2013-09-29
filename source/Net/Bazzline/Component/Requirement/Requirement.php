@@ -4,7 +4,6 @@ namespace Net\Bazzline\Component\Requirement;
 
 use InvalidArgumentException;
 use Net\Bazzline\Component\Lock\RuntimeLock;
-use Net\Bazzline\Component\Shutdown\RuntimeShutdown;
 use RuntimeException;
 use SplObjectStorage;
 
@@ -39,6 +38,13 @@ class Requirement implements RequirementInterface
     protected $isDisabled;
 
     /**
+     * @var bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    private $returnValueIfIsDisabled;
+
+    /**
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
@@ -47,8 +53,7 @@ class Requirement implements RequirementInterface
         $this->conditions = new SplObjectStorage();
         $this->lock = new RuntimeLock();
         $this->lock->setName(get_class($this));
-        $this->isDisabled = new RuntimeShutdown();
-        $this->isDisabled->setName(get_class($this));
+        $this->isDisabled = false;
     }
 
     /**
@@ -99,7 +104,7 @@ class Requirement implements RequirementInterface
      */
     public function isMet()
     {
-        if ($this->isShutdown()) {
+        if ($this->isDisabled()) {
             return true;
         } else {
             if ($this->conditions->count() == 0) {
@@ -141,15 +146,7 @@ class Requirement implements RequirementInterface
      */
     public function isDisabled()
     {
-        return $this->isDisabled->request();
-    }
-
-    /**
-     * {$inheritdoc}
-     */
-    public function isShutdown()
-    {
-        return $this->isDisabled->isRequested();
+        return $this->isDisabled;
     }
 
     /**
@@ -163,4 +160,31 @@ class Requirement implements RequirementInterface
 
         return $this;
     }
-}
+
+    /**
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function getReturnValueIfIsDisabled()
+    {
+        return $this->isDisabled;
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function setReturnValueIfIsDisabledToFalse()
+    {
+        $this->returnValueIfIsDisabled = false;
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function setReturnValueIfIsDisabledToTrue()
+    {
+        $this->returnValueIfIsDisabled = true;
+    }}
