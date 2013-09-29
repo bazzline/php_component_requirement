@@ -19,7 +19,7 @@ abstract class AbstractCondition implements ConditionInterface
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-09-29
      */
-    protected $isDisabled;
+    private $isDisabled;
 
     /**
      * @var \SplObjectStorage|IsMetInterface[]
@@ -135,6 +135,16 @@ abstract class AbstractCondition implements ConditionInterface
         }
 
         return (isset($this->methodNamesPerItem[$hash][$methodName]));
+    }
+
+    /**
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function isDisabled()
+    {
+        return $this->isDisabled;
     }
 
     /**
