@@ -162,6 +162,16 @@ class Requirement implements RequirementInterface
     }
 
     /**
+     * @return null|ConditionInterface[]
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function getConditions()
+    {
+        return $this->conditions;
+    }
+
+    /**
      * @return bool
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-09-29

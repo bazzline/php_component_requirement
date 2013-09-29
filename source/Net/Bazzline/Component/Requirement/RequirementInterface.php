@@ -41,4 +41,11 @@ interface RequirementInterface extends IsDisabledInterface, IsMetInterface
      * @since 2013-06-29
      */
     public function lock();
+
+    /**
+     * @return null|ConditionInterface[]
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function getConditions();
 }

@@ -25,7 +25,7 @@ interface ConditionInterface extends IsDisabledInterface, IsMetInterface
     /**
      * Returns all added items as array
      *
-     * @return \SplObjectStorage
+     * @return null|IsMetInterface[]
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-25
      */
