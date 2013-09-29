@@ -109,13 +109,40 @@ class RequirementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Mockery\MockInterface
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function testGetConditions()
+    {
+        $conditionOne = $this->createCondition()
+            ->shouldReceive('isMet')
+            ->never();
+        $conditionTwo = $this->createCondition()
+            ->shouldReceive('isMet')
+            ->never();
+        $expectedConditions = array(
+            $conditionOne,
+            $conditionTwo
+        );
+
+        $this->requirement
+            ->addCondition($conditionOne)
+            ->addCondition($conditionTwo);
+
+        $this->assertEquals(
+            $expectedConditions,
+            (array) $this->requirement->getConditions()
+        );
+    }
+
+    /**
+     * @return \Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AndCondition
      * @author stev leibelt <artodeto@arcor.de>
      * @since 2013-06-29
      */
     private function createCondition()
     {
-        $condition = Mockery::mock('\Net\Bazzline\Component\Requirement\AndCondition');
+        $condition = Mockery::mock('Net\Bazzline\Component\Requirement\AndCondition');
 
         return $condition;
     }
