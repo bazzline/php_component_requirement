@@ -116,6 +116,16 @@ abstract class AbstractCondition implements ConditionInterface
     }
 
     /**
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function isDisabled()
+    {
+        return $this->isDisabled;
+    }
+
+    /**
      * Checks if item implements method name
      *
      * @param IsMetInterface $item
@@ -135,16 +145,6 @@ abstract class AbstractCondition implements ConditionInterface
         }
 
         return (isset($this->methodNamesPerItem[$hash][$methodName]));
-    }
-
-    /**
-     * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
-     * @since 2013-09-29
-     */
-    protected function isDisabled()
-    {
-        return $this->isDisabled;
     }
 
     /**
