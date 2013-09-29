@@ -7,7 +7,7 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 * We want to have a generic component where you can reuse business items
 * Since business logic can became nested, the component should handle this
 * Add simple way to prevent requirement from future changes (added by locking in [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1))
-* Add simple way to disable requirement evaluation (added by shutdown in [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5))
+* Add simple way to disable requirement evaluation (added by *IsDisabledInterface* in [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0))
 
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/stevleibelt/php_component_requirement.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_requirement)
@@ -78,16 +78,16 @@ Currently, no stack trace is available (check upcoming release) so the only feed
 php examples/source/Example/Validator/Example.php
 ```
 
-## The Shutdown Example
+## The Disabled Requirement Example
 
-The [shutdown example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5/examples/source/Example/WithShutdown/Example.php "php component requirement - with shutdown example") is using the ability to shutdown a whole requirement.
+The [disabled requirement example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
 
-This example shows how to use the shutdown implementation.
-First, the requirement is evaluated with an item, that always returns *false*. If a shutdown is requested, the behavior changes and the evaluation now always returns true.
+This example shows how to use the implementation of the *IsDisabledInterface*.
+First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called, the behavior changes and the evaluation now always returns true.
 
 ```php
 //to start the example
-php examples/source/Example/WithShutdown/Example.php
+php examples/source/Example/WithDisabledRequirement/Example.php
 ```
 
 # Hints For Using And Developing
@@ -120,7 +120,8 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * renamed ConditionAbstract to AbstractCondition
     * added IsDisabledInterface
     * implemented IsDisabledInterface to AbstractCondition
-    *
+    * implemented IsDisabledInterface to Requirement
+    * renamed and updated previous WithShutdown example to WithDisabledRequirement
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
     * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)

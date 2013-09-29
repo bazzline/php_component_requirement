@@ -4,14 +4,14 @@
  * @since 2013-09-19
  */
 
-namespace Example\WithDisabled;
+namespace Example\WithDisabledRequirement;
 
 use Net\Bazzline\Component\Requirement\IsMetInterface;
 
 /**
  * Class WillFailItem
  *
- * @package Example\WithDisabled
+ * @package Example\WithDisabledRequirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-09-16
  */

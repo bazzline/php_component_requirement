@@ -4,7 +4,7 @@
  * @since 2013-09-16
  */
 
-namespace Example\WithDisabled;
+namespace Example\WithDisabledRequirement;
 
 use Net\Bazzline\Component\Requirement\AndCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
