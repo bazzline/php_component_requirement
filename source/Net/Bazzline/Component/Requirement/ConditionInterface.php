@@ -9,7 +9,7 @@ namespace Net\Bazzline\Component\Requirement;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-interface ConditionInterface
+interface ConditionInterface extends IsDisabledInterface, IsMetInterface
 {
     /**
      * Adds an item to the condition.

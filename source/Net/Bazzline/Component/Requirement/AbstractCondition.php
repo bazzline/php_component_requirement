@@ -12,7 +12,7 @@ use SplObjectStorage;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-25
  */
-abstract class AbstractCondition implements IsDisabledInterface, IsMetInterface, ConditionInterface
+abstract class AbstractCondition implements ConditionInterface
 {
     /**
      * @var bool
