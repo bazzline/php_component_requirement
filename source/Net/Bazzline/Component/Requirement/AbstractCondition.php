@@ -36,6 +36,13 @@ abstract class AbstractCondition implements ConditionInterface
     private $methodNamesPerItem;
 
     /**
+     * @var bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    private $returnValueIfIsDisabled;
+
+    /**
      * Constructor of the class
      */
     public function __construct()
@@ -43,6 +50,7 @@ abstract class AbstractCondition implements ConditionInterface
         $this->isDisabled = false;
         $this->items = new SplObjectStorage();
         $this->methodNamesPerItem = array();
+        $this->setReturnValueIfIsDisabledToTrue();
     }
 
     /**
@@ -127,5 +135,33 @@ abstract class AbstractCondition implements ConditionInterface
         }
 
         return (isset($this->methodNamesPerItem[$hash][$methodName]));
+    }
+
+    /**
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function getReturnValueIfIsDisabled()
+    {
+        return $this->isDisabled;
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function setReturnValueIfIsDisabledToFalse()
+    {
+        $this->returnValueIfIsDisabled = false;
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    protected function setReturnValueIfIsDisabledToTrue()
+    {
+        $this->returnValueIfIsDisabled = true;
     }
 }
