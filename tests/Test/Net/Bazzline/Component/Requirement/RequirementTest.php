@@ -131,11 +131,14 @@ class RequirementTest extends TestCase
             ->addCondition($conditionOne)
             ->addCondition($conditionTwo);
 
+        $availableConditions = (array) $this->requirement->getConditions();
+
         sort(array_values($expectedConditions));
+        sort(array_values($availableConditions));
 
         $this->assertEquals(
             $expectedConditions,
-            sort(array_values((array) $this->requirement->getConditions()))
+            $availableConditions
         );
     }
 }
