@@ -51,9 +51,10 @@ class Requirement implements RequirementInterface
     public function __construct()
     {
         $this->conditions = new SplObjectStorage();
+        $this->isDisabled = false;
         $this->lock = new RuntimeLock();
         $this->lock->setName(get_class($this));
-        $this->isDisabled = false;
+        $this->setReturnValueIfIsDisabledToTrue();
     }
 
     /**
@@ -105,7 +106,7 @@ class Requirement implements RequirementInterface
     public function isMet()
     {
         if ($this->isDisabled()) {
-            return true;
+            return $this->getReturnValueIfIsDisabled();
         } else {
             if ($this->conditions->count() == 0) {
                 throw new RuntimeException(

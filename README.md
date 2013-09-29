@@ -115,7 +115,6 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 * [next](https://github.com/stevleibelt/php_component_requirement)
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add stack trace for retrieving the first isMet-Item that returns false
-    * implement mechanism to enable or disable evaluation of condition by isMet method call
 * [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0)
     * renamed ConditionAbstract to AbstractCondition
     * added IsDisabledInterface
