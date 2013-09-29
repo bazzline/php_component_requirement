@@ -114,10 +114,12 @@ class RequirementTest extends TestCase
      */
     public function testGetConditions()
     {
-        $conditionOne = $this->getMockAndCondition()
+        $conditionOne = $this->getMockAndCondition();
+        $conditionOne
             ->shouldReceive('isMet')
             ->never();
-        $conditionTwo = $this->getMockAndCondition()
+        $conditionTwo = $this->getMockAndCondition();
+        $conditionTwo
             ->shouldReceive('isMet')
             ->never();
         $expectedConditions = array(
@@ -130,8 +132,8 @@ class RequirementTest extends TestCase
             ->addCondition($conditionTwo);
 
         $this->assertEquals(
-            $expectedConditions,
-            (array) $this->requirement->getConditions()
+            sort(array_values($expectedConditions)),
+            sort(array_values((array) $this->requirement->getConditions()))
         );
     }
 }
