@@ -22,5 +22,10 @@ interface IsDisabledInterface
      */
     public function disable();
 
-    //@TODO implement isDisabled
+    /**
+     * @return bool
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-29
+     */
+    public function isDisabled();
 }
