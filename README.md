@@ -122,6 +122,9 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * implemented IsDisabledInterface to Requirement
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
+    * created TestCase that is extended by all phpunit tests
+    * @todo added example WithDisabledCondition
+    * @todo added example WithDisabledItem
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
     * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
