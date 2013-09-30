@@ -169,7 +169,13 @@ class Requirement implements RequirementInterface
      */
     public function getConditions()
     {
-        return $this->conditions;
+        $conditions = array();
+
+        foreach ($this->conditions as $condition) {
+            $conditions[] = $condition;
+        }
+
+        return $conditions;
     }
 
     /**

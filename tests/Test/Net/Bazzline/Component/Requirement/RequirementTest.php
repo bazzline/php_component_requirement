@@ -131,14 +131,15 @@ class RequirementTest extends TestCase
             ->addCondition($conditionOne)
             ->addCondition($conditionTwo);
 
-        $availableConditions = (array) $this->requirement->getConditions();
-
-        sort(array_values($expectedConditions));
-        sort(array_values($availableConditions));
+        $availableConditions = $this->requirement->getConditions();
 
         $this->assertEquals(
-            $expectedConditions,
-            $availableConditions
+            count($expectedConditions),
+            count($availableConditions)
         );
+
+        foreach ($expectedConditions as $condition) {
+            $this->assertTrue(in_array($condition, $availableConditions));
+        }
     }
 }
