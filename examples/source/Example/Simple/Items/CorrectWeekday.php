@@ -2,7 +2,7 @@
 
 namespace Example\Simple\Items;
 
-use Net\Bazzline\Component\Requirement\IsMetInterface;
+use Net\Bazzline\Component\Requirement\AbstractItem;
 
 /**
  * Class CorrectWeekday
@@ -10,7 +10,7 @@ use Net\Bazzline\Component\Requirement\IsMetInterface;
  * @author jens
  * @since 2013-06-27
  */
-class CorrectWeekday implements IsMetInterface
+class CorrectWeekday extends AbstractItem
 {
     /** @var integer */
     protected $expectedWeekday;

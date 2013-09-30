@@ -6,7 +6,7 @@
 
 namespace Example\Table\Items;
 
-use Net\Bazzline\Component\Requirement\IsMetInterface;
+use Net\Bazzline\Component\Requirement\AbstractItem;
 
 /**
  * Class Feature
@@ -15,7 +15,7 @@ use Net\Bazzline\Component\Requirement\IsMetInterface;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-06-26
  */
-class Feature implements IsMetInterface
+class Feature extends AbstractItem
 {
     /**
      * @var string

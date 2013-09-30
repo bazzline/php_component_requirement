@@ -6,7 +6,7 @@
 
 namespace Example\Validator;
 
-use Net\Bazzline\Component\Requirement\IsMetInterface;
+use Net\Bazzline\Component\Requirement\AbstractItem;
 
 /**
  * Class AbstractTableValidator
@@ -15,7 +15,7 @@ use Net\Bazzline\Component\Requirement\IsMetInterface;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-08-12
  */
-abstract class AbstractTableValidator implements IsMetInterface
+abstract class AbstractTableValidator extends AbstractItem
 {
     /**
      * @var Table

@@ -6,7 +6,7 @@
 
 namespace Example\WithDisabledRequirement;
 
-use Net\Bazzline\Component\Requirement\IsMetInterface;
+use Net\Bazzline\Component\Requirement\AbstractItem;
 
 /**
  * Class WillFailItem
@@ -15,7 +15,7 @@ use Net\Bazzline\Component\Requirement\IsMetInterface;
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-09-16
  */
-class WillFailItem implements IsMetInterface
+class WillFailItem extends AbstractItem
 {
     /**
      * Validates if given requirement is met
