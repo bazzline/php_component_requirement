@@ -79,4 +79,14 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         return Mockery::mock('Net\Bazzline\Component\Requirement\AndCondition');
     }
+
+    /**
+     * @return Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AbstractItem
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-09-30
+     */
+    protected function getMockAbstractItem()
+    {
+        return Mockery::mock('Net\Bazzline\Component\Requirement\AbstractItem[IsMet]');
+    }
 }
