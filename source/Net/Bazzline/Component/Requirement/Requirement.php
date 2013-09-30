@@ -204,4 +204,5 @@ class Requirement implements RequirementInterface
     protected function setReturnValueIfIsDisabledToTrue()
     {
         $this->returnValueIfIsDisabled = true;
-    }}
+    }
+}

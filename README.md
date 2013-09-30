@@ -122,6 +122,9 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * implemented IsDisabledInterface to Requirement
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
+    * created ItemInterface
+    * created AbstractItem that implements ItemInterface
+    * refactored ConditionInterface, addItem now only accepts ItemInterface instead of IsMetInterface
     * created TestCase that is extended by all phpunit tests
     * @todo added example WithDisabledCondition
     * @todo added example WithDisabledItem
