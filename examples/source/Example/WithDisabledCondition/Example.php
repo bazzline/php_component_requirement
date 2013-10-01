@@ -4,7 +4,7 @@
  * @since 2013-09-16
  */
 
-namespace Example\WithDisabledRequirement;
+namespace Example\WithDisabledCondition;
 
 use Net\Bazzline\Component\Requirement\AndCondition;
 use Net\Bazzline\Component\Requirement\Requirement;
@@ -28,8 +28,8 @@ echo str_repeat('-', 40) . PHP_EOL;
 echo 'Return of requirement "isMet" call "' . var_export($requirement->isMet(), true) . '".' . PHP_EOL;
 echo str_repeat('-', 40) . PHP_EOL;
 
-$requirement->disable();
+$andCondition->disable();
 
-echo 'Requested disabled for requirement.' . PHP_EOL;
+echo 'Requested disable for condition.' . PHP_EOL;
 echo 'Return of requirement "isMet" call "' . var_export($requirement->isMet(), true) . '".' . PHP_EOL;
 echo str_repeat('-', 40) . PHP_EOL;
