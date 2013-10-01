@@ -4,7 +4,7 @@
  * @since 2013-09-19
  */
 
-namespace Example\WithDisabledRequirement;
+namespace Example\WithDisabledItem;
 
 use Net\Bazzline\Component\Requirement\AbstractItem;
 

@@ -99,7 +99,19 @@ First, the requirement is evaluated with an item, that always returns *false*. I
 
 ```php
 //to start the example
-php examples/source/Example/WithDisabledRequirement/Example.php
+php examples/source/Example/WithDisabledCondition/Example.php
+```
+
+## The Disabled Item Example
+
+The [disabled item example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledItem/Example.php "php component requirement - with disabled item example") is using the ability to disable a item.
+
+This example shows how to use the implementation of the *IsDisabledInterface*.
+First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the item, the behavior changes and the evaluation now always returns true.
+
+```php
+//to start the example
+php examples/source/Example/WithDisabledCondition/Example.php
 ```
 
 # Hints For Using And Developing
@@ -141,7 +153,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * covered AbstractItem and AbstractCondition with unit test
     * refactored Condition::getItems() - now returns plain php array
     * added example WithDisabledCondition
-    * @todo added example WithDisabledItem
+    * added example WithDisabledItem
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
     * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)

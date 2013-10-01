@@ -27,6 +27,10 @@ class WillFailItem extends AbstractItem
      */
     public function isMet()
     {
-        return false;
+        if ($this->isDisabled()) {
+            return $this->getReturnValueIfIsDisabled();
+        } else {
+            return false;
+        }
     }
 }
