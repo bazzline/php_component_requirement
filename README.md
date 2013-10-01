@@ -83,7 +83,19 @@ php examples/source/Example/Validator/Example.php
 The [disabled requirement example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
-First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called, the behavior changes and the evaluation now always returns true.
+First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the requirement, the behavior changes and the evaluation now always returns true.
+
+```php
+//to start the example
+php examples/source/Example/WithDisabledRequirement/Example.php
+```
+
+## The Disabled Condition Example
+
+The [disabled condition example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledCondition/Example.php "php component requirement - with disabled condition example") is using the ability to disable a condition.
+
+This example shows how to use the implementation of the *IsDisabledInterface*.
+First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the condition, the behavior changes and the evaluation now always returns true.
 
 ```php
 //to start the example
