@@ -99,4 +99,22 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         return Mockery::mock('Net\Bazzline\Component\Requirement\AbstractCondition[IsMet]');
     }
+
+    /**
+     * @param array $expectedArray
+     * @param array $array
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-10-01
+     */
+    protected function assertArraysContainEqualEntries(array $expectedArray, array $array)
+    {
+        $this->assertEquals(
+            count($expectedArray),
+            count($array)
+        );
+
+        foreach ($expectedArray as $item) {
+            $this->assertTrue(in_array($item, $array));
+        }
+    }
 }
