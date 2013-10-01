@@ -137,8 +137,9 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * [next](https://github.com/stevleibelt/php_component_requirement)
-    * add trigger to run through all isMet-Items and add all fails to the stack trace
+    * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
+    * add trigger to run through all isMet-Items and add all fails to the stack trace
 * [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0)
     * added example WithDisabledCondition
     * added example WithDisabledItem
@@ -175,9 +176,3 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * Finished unittests
 * [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0)
     * Finished modeling of IsMetInterface and ConditionInterface
-
-# Todo List
-
-* Investigate if we can use gherkin to create requirements
-* Add method to set strength of IsMet condition requirement (currently each condition has to be true)
-* Updated readme
