@@ -156,23 +156,23 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * renamed ConditionAbstract to AbstractCondition
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
-    * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
+    * added mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
-    * add example to use the component as validator
+    * added example to use the component as validator
 * [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
-    * add caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
+    * added caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
 * [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2)
-    * Refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
+    * refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
 * [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1)
-    * Added annotations to example requirement
-    * Added return value $this to magic __call methods of requirement and condition
-    * Added return value $this to addItem method of ConditionInterface
-    * Added return value $this to addCondition method of RequirementInterface
-    * Added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
-    * Updated Readme with explanation of provided examples
+    * added annotations to example requirement
+    * added return value $this to magic __call methods of requirement and condition
+    * added return value $this to addItem method of ConditionInterface
+    * added return value $this to addCondition method of RequirementInterface
+    * added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
+    * updated readme with explanation of provided examples
 * [1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.0)
-    * Finished modeling of RequirementInterface (removed addItem)
-    * Finished two examples
-    * Finished unittests
+    * finished modeling of RequirementInterface (removed addItem)
+    * finished two examples
+    * finished unittests
 * [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0)
-    * Finished modeling of IsMetInterface and ConditionInterface
+    * finished modeling of IsMetInterface and ConditionInterface
