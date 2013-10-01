@@ -140,20 +140,20 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add stack trace for retrieving the first isMet-Item that returns false
 * [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0)
-    * renamed ConditionAbstract to AbstractCondition
-    * added IsDisabledInterface
-    * implemented IsDisabledInterface to AbstractCondition
-    * implemented IsDisabledInterface to Requirement
-    * renamed and updated previous WithShutdown example to WithDisabledRequirement
-    * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
-    * created ItemInterface
-    * created AbstractItem that implements ItemInterface
-    * refactored ConditionInterface, addItem now only accepts ItemInterface instead of IsMetInterface
-    * created TestCase that is extended by all phpunit tests
-    * covered AbstractItem and AbstractCondition with unit test
-    * refactored Condition::getItems() - now returns plain php array
     * added example WithDisabledCondition
     * added example WithDisabledItem
+    * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
+    * covered AbstractItem and AbstractCondition with unit test
+    * created AbstractItem that implements ItemInterface
+    * created IsDisabledInterface
+    * created ItemInterface
+    * created TestCase that is extended by all phpunit tests
+    * implemented IsDisabledInterface to AbstractCondition
+    * implemented IsDisabledInterface to Requirement
+    * refactored ConditionInterface, addItem now only accepts ItemInterface instead of IsMetInterface
+    * refactored Condition::getItems() - now returns plain php array
+    * renamed ConditionAbstract to AbstractCondition
+    * renamed and updated previous WithShutdown example to WithDisabledRequirement
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
     * implement mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
