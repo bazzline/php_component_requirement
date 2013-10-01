@@ -28,4 +28,23 @@ class AbstractConditionTest extends TestCase
         $condition->disable();
         $this->assertTrue($condition->isDisabled());
     }
+
+    public function testAddItem()
+    {
+        $condition = $this->getMockAbstractCondition();
+        $this->assertEquals(array(), $condition->getItems());
+
+        $itemOne = $this->getMockAbstractItem();
+        $itemTwo = $this->getMockAbstractItem();
+
+        $condition->addItem($itemOne);
+        $condition->addItem($itemTwo);
+
+        $expectedItems = array(
+            $itemOne,
+            $itemTwo
+        );
+
+        $this->assertArraysContainEqualEntries($expectedItems, $condition->getItems());
+    }
 }

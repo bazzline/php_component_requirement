@@ -126,6 +126,8 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * created AbstractItem that implements ItemInterface
     * refactored ConditionInterface, addItem now only accepts ItemInterface instead of IsMetInterface
     * created TestCase that is extended by all phpunit tests
+    * covered AbstractItem and AbstractCondition with unit test
+    * refactored Condition::getItems() - now returns plain php array
     * @todo added example WithDisabledCondition
     * @todo added example WithDisabledItem
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)

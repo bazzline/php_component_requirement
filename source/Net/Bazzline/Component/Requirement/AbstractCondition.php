@@ -100,7 +100,13 @@ abstract class AbstractCondition implements ConditionInterface
      */
     public function getItems()
     {
-        return $this->items;
+        $items = array();
+
+        foreach ($this->items as $item) {
+            $items[] = $item;
+        }
+
+        return $items;
     }
 
     /**
