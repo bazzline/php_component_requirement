@@ -12,7 +12,6 @@ namespace Test\Net\Bazzline\Component\Requirement;
  * @package Test\Net\Bazzline\Component\Requirement
  * @author stev leibelt <artodeto@arcor.de>
  * @since 2013-09-30
- * @todo implement addItem and getItems test
  */
 class AbstractConditionTest extends TestCase
 {
@@ -29,7 +28,23 @@ class AbstractConditionTest extends TestCase
         $this->assertTrue($condition->isDisabled());
     }
 
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-10-01
+     */
     public function testAddItem()
+    {
+        $condition = $this->getMockAbstractCondition();
+        $item = $this->getMockAbstractItem();
+
+        $this->assertEquals($condition, $condition->addItem($item));
+    }
+
+    /**
+     * @author stev leibelt <artodeto@arcor.de>
+     * @since 2013-10-01
+     */
+    public function testGetItems()
     {
         $condition = $this->getMockAbstractCondition();
         $this->assertEquals(array(), $condition->getItems());
