@@ -136,11 +136,11 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Version History
 
-- [ ] [next](https://github.com/stevleibelt/php_component_requirement)
+* [next](https://github.com/stevleibelt/php_component_requirement) - not yet released
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
-- [ ] [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0)
+* [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0) - not yet released
     * added example WithDisabledCondition
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
@@ -155,24 +155,24 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * refactored Condition::getItems() - now returns plain php array
     * renamed ConditionAbstract to AbstractCondition
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
-- [x] [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5)
+* [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5) - released at 2013-09-16
     * added mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
-- [x] [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4)
+* [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4) - released at 2013-08-12
     * added example to use the component as validator
-- [x] [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3)
+* [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3) - released at 2013-07-22
     * added caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
-- [x] [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2)
+* [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2) - released at 2013-07-08
     * refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
-- [x] [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1)
+* [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1) - released at 2013-06-29
     * added annotations to example requirement
     * added return value $this to magic __call methods of requirement and condition
     * added return value $this to addItem method of ConditionInterface
     * added return value $this to addCondition method of RequirementInterface
     * added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
     * updated readme with explanation of provided examples
-- [x] [1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.0)
+* [1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.0) - released at 2013-06-27
     * finished modeling of RequirementInterface (removed addItem)
     * finished two examples
     * finished unittests
-- [x] [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0)
+* [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0) - released at 2013-06-27
     * finished modeling of IsMetInterface and ConditionInterface
