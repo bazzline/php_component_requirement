@@ -11,41 +11,41 @@ use SplObjectStorage;
  * Class Requirement
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 class Requirement implements RequirementInterface
 {
     /**
      * @var \SplObjectStorage|ConditionInterface[]|IsMetInterface[]
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     protected $conditions;
 
     /**
      * @var \Net\Bazzline\Component\Lock\RuntimeLock
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-29
      */
     protected $lock;
 
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-16
      */
     protected $isDisabled;
 
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     private $returnValueIfIsDisabled;
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function __construct()
@@ -152,7 +152,7 @@ class Requirement implements RequirementInterface
 
     /**
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function disable()
@@ -164,7 +164,7 @@ class Requirement implements RequirementInterface
 
     /**
      * @return null|ConditionInterface[]
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function getConditions()
@@ -180,7 +180,7 @@ class Requirement implements RequirementInterface
 
     /**
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getReturnValueIfIsDisabled()
@@ -189,7 +189,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function setReturnValueIfIsDisabledToFalse()
@@ -198,7 +198,7 @@ class Requirement implements RequirementInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function setReturnValueIfIsDisabledToTrue()

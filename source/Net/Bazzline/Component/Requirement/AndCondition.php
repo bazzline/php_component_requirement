@@ -8,7 +8,7 @@ use RuntimeException;
  * Class AndCondition
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 class AndCondition extends AbstractCondition

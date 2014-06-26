@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-26
  */
 
@@ -28,7 +28,7 @@ use Net\Bazzline\Component\Requirement\Requirement;
  * @method IsAGoodTableRequirement setHeight($height) Sets the height (string)
  *
  * @package Example\Table
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-26
  */
 class IsAGoodTableRequirement extends Requirement
@@ -37,7 +37,7 @@ class IsAGoodTableRequirement extends Requirement
      * This requirement is testing against following properties
      * [[green|red|brown|yellow]&[extendable|foldable]&[80cm]]or[jens wiese|stevleibelt]
      *
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-26
      */
     public function __construct()
@@ -62,7 +62,7 @@ class IsAGoodTableRequirement extends Requirement
 
     /**
      * @return OrCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-26
      */
     private function createColorCondition()
@@ -83,7 +83,7 @@ class IsAGoodTableRequirement extends Requirement
 
     /**
      * @return OrCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-26
      */
     private function createFeatureCondition()
@@ -100,7 +100,7 @@ class IsAGoodTableRequirement extends Requirement
 
     /**
      * @return OrCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-26
      */
     private function createDeveloperCondition()

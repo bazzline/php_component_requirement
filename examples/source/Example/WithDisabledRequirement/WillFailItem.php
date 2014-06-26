@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-19
  */
 
@@ -12,7 +12,7 @@ use Net\Bazzline\Component\Requirement\AbstractItem;
  * Class WillFailItem
  *
  * @package Example\WithDisabledRequirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-16
  */
 class WillFailItem extends AbstractItem
@@ -22,7 +22,7 @@ class WillFailItem extends AbstractItem
      *
      * @return boolean
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function isMet()

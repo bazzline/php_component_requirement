@@ -6,7 +6,7 @@ namespace Net\Bazzline\Component\Requirement;
  * Class RequirementInterface
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 interface RequirementInterface extends IsDisabledInterface, IsMetInterface
@@ -18,7 +18,7 @@ interface RequirementInterface extends IsDisabledInterface, IsMetInterface
      * @param ConditionInterface $condition
      * @return $this
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function addCondition(ConditionInterface $condition);
@@ -27,7 +27,7 @@ interface RequirementInterface extends IsDisabledInterface, IsMetInterface
      * Test of requirement is locked
      *
      * @return boolean
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-29
      */
     public function isLocked();
@@ -37,14 +37,14 @@ interface RequirementInterface extends IsDisabledInterface, IsMetInterface
      *
      * @return $this
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-29
      */
     public function lock();
 
     /**
      * @return null|ConditionInterface[]
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function getConditions();

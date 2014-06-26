@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12 
  */
 
@@ -10,7 +10,7 @@ namespace Example\Validator;
  * Class ColorValidator
  *
  * @package Example\Validator
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12
  */
 class ColorValidator extends AbstractTableValidator
@@ -20,7 +20,7 @@ class ColorValidator extends AbstractTableValidator
      *
      * @return boolean
      * @throws \RuntimeException
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function isMet()

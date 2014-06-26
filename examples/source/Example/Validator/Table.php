@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12 
  */
 
@@ -10,35 +10,35 @@ namespace Example\Validator;
  * Class Table
  *
  * @package Example\Validator
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12
  */
 class Table
 {
     /**
      * @var string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     protected $color;
 
     /**
      * @var int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     protected $height;
 
     /**
      * @var int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     protected $length;
 
     /**
      * @var int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     protected $width;
@@ -46,7 +46,7 @@ class Table
     /**
      * @param string $color
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function setColor($color)
@@ -58,7 +58,7 @@ class Table
 
     /**
      * @return string
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function getColor()
@@ -69,7 +69,7 @@ class Table
     /**
      * @param int $height
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function setHeight($height)
@@ -81,7 +81,7 @@ class Table
 
     /**
      * @return int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function getHeight()
@@ -92,7 +92,7 @@ class Table
     /**
      * @param int $length
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function setLength($length)
@@ -104,7 +104,7 @@ class Table
 
     /**
      * @return int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function getLength()
@@ -115,7 +115,7 @@ class Table
     /**
      * @param int $width
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function setWidth($width)
@@ -127,7 +127,7 @@ class Table
 
     /**
      * @return int
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function getWidth()

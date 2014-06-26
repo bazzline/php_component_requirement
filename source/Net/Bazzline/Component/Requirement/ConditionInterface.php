@@ -6,7 +6,7 @@ namespace Net\Bazzline\Component\Requirement;
  * Class Condition
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 interface ConditionInterface extends IsDisabledInterface, IsMetInterface
@@ -17,7 +17,7 @@ interface ConditionInterface extends IsDisabledInterface, IsMetInterface
      *
      * @param IsMetInterface $item
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function addItem(IsMetInterface $item);
@@ -26,7 +26,7 @@ interface ConditionInterface extends IsDisabledInterface, IsMetInterface
      * Returns all added items as array
      *
      * @return null|IsMetInterface[]
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     public function getItems();

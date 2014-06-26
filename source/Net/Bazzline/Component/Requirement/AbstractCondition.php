@@ -9,35 +9,35 @@ use SplObjectStorage;
  * Class ConditionAbstract
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 abstract class AbstractCondition implements ConditionInterface
 {
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     private $isDisabled;
 
     /**
      * @var \SplObjectStorage|IsMetInterface[]
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-25
      */
     protected $items;
 
     /**
      * @var array
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-20
      */
     private $methodNamesPerItem;
 
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     private $returnValueIfIsDisabled;
@@ -111,7 +111,7 @@ abstract class AbstractCondition implements ConditionInterface
 
     /**
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function disable()
@@ -123,7 +123,7 @@ abstract class AbstractCondition implements ConditionInterface
 
     /**
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function isDisabled()
@@ -137,7 +137,7 @@ abstract class AbstractCondition implements ConditionInterface
      * @param IsMetInterface $item
      * @param string $methodName
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-07-20
      */
     protected function itemSupportsMethodCall(IsMetInterface $item, $methodName)
@@ -155,7 +155,7 @@ abstract class AbstractCondition implements ConditionInterface
 
     /**
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getReturnValueIfIsDisabled()
@@ -164,7 +164,7 @@ abstract class AbstractCondition implements ConditionInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function setReturnValueIfIsDisabledToFalse()
@@ -173,7 +173,7 @@ abstract class AbstractCondition implements ConditionInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function setReturnValueIfIsDisabledToTrue()

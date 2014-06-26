@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-30
  */
 
@@ -10,13 +10,13 @@ namespace Test\Net\Bazzline\Component\Requirement;
  * Class AbstractConditionTest
  *
  * @package Test\Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-30
  */
 class AbstractConditionTest extends TestCase
 {
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     public function testDisable()
@@ -29,7 +29,7 @@ class AbstractConditionTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-10-01
      */
     public function testAddItem()
@@ -41,7 +41,7 @@ class AbstractConditionTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-10-01
      */
     public function testGetItems()

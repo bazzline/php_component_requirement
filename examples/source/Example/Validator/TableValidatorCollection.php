@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12 
  */
 
@@ -15,14 +15,14 @@ use Net\Bazzline\Component\Requirement\Requirement;
  * @method TableValidatorCollection setTable(Table $table) sets the current table instance
  *
  * @package Example\Validator
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12
  */
 class TableValidatorCollection extends Requirement
 {
     /**
      * @return TableValidatorCollection
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2012-08-12
      */
     public static function create()

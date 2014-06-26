@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-29
  */
 
@@ -16,13 +16,13 @@ use PHPUnit_Framework_TestCase;
  * Class TestCase
  *
  * @package Test\Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-29
  */
 class TestCase extends PHPUnit_Framework_TestCase
 {
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function tearDown()
@@ -32,7 +32,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return Requirement
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getNewRequirement()
@@ -42,7 +42,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return AndCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getNewAndCondition()
@@ -52,7 +52,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return OrCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getNewOrCondition()
@@ -62,7 +62,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return Mockery\Mock|\Net\Bazzline\Component\Requirement\IsMetInterface
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getMockItem()
@@ -72,7 +72,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AndCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     protected function getMockAndCondition()
@@ -82,7 +82,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AbstractItem
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected function getMockAbstractItem()
@@ -92,7 +92,7 @@ class TestCase extends PHPUnit_Framework_TestCase
 
     /**
      * @return Mockery\MockInterface|\Net\Bazzline\Component\Requirement\AbstractCondition
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected function getMockAbstractCondition()
@@ -103,7 +103,7 @@ class TestCase extends PHPUnit_Framework_TestCase
     /**
      * @param array $expectedArray
      * @param array $array
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-10-01
      */
     protected function assertArraysContainEqualEntries(array $expectedArray, array $array)

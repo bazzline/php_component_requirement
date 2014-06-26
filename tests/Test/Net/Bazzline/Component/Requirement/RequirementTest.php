@@ -57,7 +57,7 @@ class RequirementTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-29
      */
     public function testIsLocked()
@@ -70,7 +70,7 @@ class RequirementTest extends TestCase
     /**
      * @expectedException \RuntimeException
      * @expectedExceptionMessage Requirement is locked, no new condition could be added.
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-06-29
      */
     public function testLocking()
@@ -82,7 +82,7 @@ class RequirementTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-16
      */
     public function testIsDisabled()
@@ -93,7 +93,7 @@ class RequirementTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-16
      */
     public function testDisable()
@@ -109,7 +109,7 @@ class RequirementTest extends TestCase
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function testGetConditions()

@@ -2,7 +2,7 @@
 /**
  * @param string $className - the name of the class the autoloader should load
  * @return bool
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-06-25
  */
 function netBazzlineComponentRequirementDevelopmentAutoloader($className)

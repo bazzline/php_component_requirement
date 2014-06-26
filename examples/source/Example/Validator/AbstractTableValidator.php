@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12 
  */
 
@@ -12,14 +12,14 @@ use Net\Bazzline\Component\Requirement\AbstractItem;
  * Class AbstractTableValidator
  *
  * @package Example\Validator
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-08-12
  */
 abstract class AbstractTableValidator extends AbstractItem
 {
     /**
      * @var Table
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     protected $table;
@@ -27,7 +27,7 @@ abstract class AbstractTableValidator extends AbstractItem
     /**
      * @param Table $table
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-08-12
      */
     public function setTable(Table $table)

@@ -1,6 +1,6 @@
 <?php
 /**
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-30
  */
 
@@ -10,27 +10,27 @@ namespace Net\Bazzline\Component\Requirement;
  * Class AbstractItem
  *
  * @package Net\Bazzline\Component\Requirement
- * @author stev leibelt <artodeto@arcor.de>
+ * @author stev leibelt <artodeto@bazzline.net>
  * @since 2013-09-30
  */
 abstract class AbstractItem implements ItemInterface
 {
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected $isDisabled;
 
     /**
      * @var bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     private $returnValueIfIsDisabled;
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     public function __construct()
@@ -41,7 +41,7 @@ abstract class AbstractItem implements ItemInterface
 
     /**
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function isDisabled()
@@ -51,7 +51,7 @@ abstract class AbstractItem implements ItemInterface
 
     /**
      * @return $this
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-29
      */
     public function disable()
@@ -63,7 +63,7 @@ abstract class AbstractItem implements ItemInterface
 
     /**
      * @return bool
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected function getReturnValueIfIsDisabled()
@@ -72,7 +72,7 @@ abstract class AbstractItem implements ItemInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected function setReturnValueIfIsDisabledToFalse()
@@ -81,7 +81,7 @@ abstract class AbstractItem implements ItemInterface
     }
 
     /**
-     * @author stev leibelt <artodeto@arcor.de>
+     * @author stev leibelt <artodeto@bazzline.net>
      * @since 2013-09-30
      */
     protected function setReturnValueIfIsDisabledToTrue()
