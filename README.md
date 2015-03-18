@@ -6,17 +6,17 @@ As a php developer, I have to deal with a lot of refactoring tasks day in and da
 * After we found strange parts of code, we want to put that into a sentence to spot the business logic
 * We want to have a generic component where you can reuse business items
 * Since business logic can became nested, the component should handle this
-* Add simple way to prevent requirement from future changes (added by locking in [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1))
-* Add simple way to disable requirement evaluation (added by *IsDisabledInterface* in [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0))
+* Add simple way to prevent requirement from future changes (added by locking in [1.0.1](https://github.com/bazzline/php_component_requirement/tree/1.0.1))
+* Add simple way to disable requirement evaluation (added by *IsDisabledInterface* in [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0))
 
 The build status of the current master branch is tracked by Travis CI: 
-[![Build Status](https://travis-ci.org/stevleibelt/php_component_requirement.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_requirement)
+[![Build Status](https://travis-ci.org/bazzline/php_component_requirement.png?branch=master)](http://travis-ci.org/bazzline/php_component_requirement)
 
 # The Untold Story of Development
 
 After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes.
 Time has passed and I had a longer talk with a team member and he presented me his idea. I liked the idea but found some drawbacks. Since it is a normal way of coding, it really isn't a fault of the team member (and O'm also not a better programmer then he), but that is how this component was initial created.
-While I was on my way back home, I had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
+While I was on my way back home, I had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/bazzline/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
 
 # Notes
 
@@ -36,7 +36,7 @@ To understand the component, it is worth to know about the used terms and names.
 
 ## General
 
-The component is shipped with some [examples](https://github.com/stevleibelt/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement").
+The component is shipped with some [examples](https://github.com/bazzline/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement").
 
 Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
@@ -49,9 +49,9 @@ Feel free to pull some more. Nevertheless, to use this component, you have to do
 
 ## The Simple Example
 
-The [simple example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
+The [simple example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
 
-As you can see in the [weekday example implementation](https://github.com/stevleibelt/php_component_requirement/blob/1.0.2/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
+As you can see in the [weekday example implementation](https://github.com/bazzline/php_component_requirement/blob/1.0.2/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
 The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
 
 ```php
@@ -61,7 +61,7 @@ php examples/source/Example/Simple/Example.php
 
 ## The Table Example
 
-The [table example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
+The [table example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
 
 To put the requirement into an sentence, "The requirement is met, if the color of the table is green or red or brown or yellow and the table as the feature to be extendable or foldable and if the table has a height of 80 cm or if the table is developed by jens wiese or stev leibelt.
 This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
@@ -75,7 +75,7 @@ php examples/source/Example/Table/Example.php
 
 ## The Validator Example
 
-The [validator example](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4/examples/source/Example/Validator "php component requirement - table validator") is using the component as validator.
+The [validator example](https://github.com/bazzline/php_component_requirement/tree/1.0.4/examples/source/Example/Validator "php component requirement - table validator") is using the component as validator.
 
 The example shows how to use the component as a validator by defining simple validators, adding them to a collection and use the requirement class as validator.
 Only if all validators are returning a positive "isMet", the table has passed the validator.
@@ -88,7 +88,7 @@ php examples/source/Example/Validator/Example.php
 
 ## The Disabled Requirement Example
 
-The [disabled requirement example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
+The [disabled requirement example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the requirement, the behavior changes and the evaluation now always returns true.
@@ -100,7 +100,7 @@ php examples/source/Example/WithDisabledRequirement/Example.php
 
 ## The Disabled Condition Example
 
-The [disabled condition example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledCondition/Example.php "php component requirement - with disabled condition example") is using the ability to disable a condition.
+The [disabled condition example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledCondition/Example.php "php component requirement - with disabled condition example") is using the ability to disable a condition.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the condition, the behavior changes and the evaluation now always returns true.
@@ -112,7 +112,7 @@ php examples/source/Example/WithDisabledCondition/Example.php
 
 ## The Disabled Item Example
 
-The [disabled item example](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledItem/Example.php "php component requirement - with disabled item example") is using the ability to disable a item.
+The [disabled item example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledItem/Example.php "php component requirement - with disabled item example") is using the ability to disable a item.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the item, the behavior changes and the evaluation now always returns true.
@@ -132,7 +132,7 @@ If you want to create a requirement class that assembles itself or use a factory
 
 ## Github
 
-    git clone https://github.com/stevleibelt/php_component_requirement
+    git clone https://github.com/bazzline/php_component_requirement
 
 ## Packagist.org
 
@@ -144,12 +144,12 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Version History
 
-* [next](https://github.com/stevleibelt/php_component_requirement) - not yet released
+* [next](https://github.com/bazzline/php_component_requirement) - not yet released
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add documentation
-* [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0) - not yet released
+* [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - not yet released
     * added example WithDisabledCondition
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
@@ -165,24 +165,24 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * renamed ConditionAbstract to AbstractCondition
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
     * updated dependencies
-* [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5) - released at 2013-09-16
+* [1.0.5](https://github.com/bazzline/php_component_requirement/tree/1.0.5) - released at 2013-09-16
     * added mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
-* [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4) - released at 2013-08-12
+* [1.0.4](https://github.com/bazzline/php_component_requirement/tree/1.0.4) - released at 2013-08-12
     * added example to use the component as validator
-* [1.0.3](https://github.com/stevleibelt/php_component_requirement/tree/1.0.3) - released at 2013-07-22
+* [1.0.3](https://github.com/bazzline/php_component_requirement/tree/1.0.3) - released at 2013-07-22
     * added caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
-* [1.0.2](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2) - released at 2013-07-08
+* [1.0.2](https://github.com/bazzline/php_component_requirement/tree/1.0.2) - released at 2013-07-08
     * refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
-* [1.0.1](https://github.com/stevleibelt/php_component_requirement/tree/1.0.1) - released at 2013-06-29
+* [1.0.1](https://github.com/bazzline/php_component_requirement/tree/1.0.1) - released at 2013-06-29
     * added annotations to example requirement
     * added return value $this to magic __call methods of requirement and condition
     * added return value $this to addItem method of ConditionInterface
     * added return value $this to addCondition method of RequirementInterface
     * added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
     * updated readme with explanation of provided examples
-* [1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.0) - released at 2013-06-27
+* [1.0.0](https://github.com/bazzline/php_component_requirement/tree/1.0.0) - released at 2013-06-27
     * finished modeling of RequirementInterface (removed addItem)
     * finished two examples
     * finished unittests
-* [0.9.0](https://github.com/stevleibelt/php_component_requirement/tree/0.9.0) - released at 2013-06-27
+* [0.9.0](https://github.com/bazzline/php_component_requirement/tree/0.9.0) - released at 2013-06-27
     * finished modeling of IsMetInterface and ConditionInterface
