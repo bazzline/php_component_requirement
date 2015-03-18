@@ -113,8 +113,20 @@ class TestCase extends PHPUnit_Framework_TestCase
             count($array)
         );
 
-        foreach ($expectedArray as $item) {
-            $this->assertTrue(in_array($item, $array));
+        foreach ($expectedArray as $expectedItem) {
+            $expectedItemHash   = spl_object_hash($expectedItem);
+            $itemExists         = false;
+
+            foreach ($array as $item) {
+                $itemHash = spl_object_hash($item);
+
+                if ($expectedItemHash === $itemHash) {
+                    $itemExists = true;
+                    break;
+                }
+            }
+
+            $this->assertTrue($itemExists);
         }
     }
 }

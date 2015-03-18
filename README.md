@@ -1,6 +1,6 @@
 # Reason Of Development
 
-As a php developer, i have to deal with a lot of refactoring tasks day in and day out. Refactoring includes not only code refactoring but also business logic refactoring. A team member right now had figured out a general problem and we all knew that we have to put "the chaos into a cage" because of the following reasons:
+As a php developer, I have to deal with a lot of refactoring tasks day in and day out. Refactoring includes not only code refactoring but also business logic refactoring. A team member right now had figured out a general problem and we all knew that we have to put "the chaos into a cage" because of the following reasons:
 
 * Developers are lazy and want to call a simple method instead of rewriting complex expressions
 * After we found strange parts of code, we want to put that into a sentence to spot the business logic
@@ -12,13 +12,21 @@ As a php developer, i have to deal with a lot of refactoring tasks day in and da
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/stevleibelt/php_component_requirement.png?branch=master)](http://travis-ci.org/stevleibelt/php_component_requirement)
 
-After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes. After a while, i had a longer talk with a team member and he presented me his idea. I liked his idea but found some drawbacks. Since it this is a normal way of coding, it really isn't a fault of the team member (and i'm also not a better programmer then he), but thats how this component was initial created. While i was on my way back home, i had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
+# The Untold Story of Development
+
+After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes.
+Time has passed and I had a longer talk with a team member and he presented me his idea. I liked the idea but found some drawbacks. Since it is a normal way of coding, it really isn't a fault of the team member (and O'm also not a better programmer then he), but that is how this component was initial created.
+While I was on my way back home, I had some ideas how to keep things simple and generic and started that project. On the next day, [jens](http://www.howtrueisfalse.de/ "jens blog - howtrueisfalse.de") joined me and we quickly made some progress and where able to tag [version 1.0.0](https://github.com/stevleibelt/php_component_requirement/tree/1.0.2 "version 1.0.2 of php component requirement") pretty soon.
+
+# Notes
+
+* Proudly I like to link to a [specification](https://github.com/domnikl/DesignPatternsPHP/tree/master/Behavioral/Specification) that is a written down "why" explanation of this component
 
 # Common Terms And Names
 
 To understand the component, it is worth to know about the used terms and names. We finally decided to use the following ones.
 
-* Requirement: Thats the class you want to work with. Extend it or use it straightaway via a factory. This class represents the business logic with all "and's" and "or's"
+* Requirement: That is the class you want to work with. Extend it or use it straightaway via a factory. This class represents the business logic with all "and's" and "or's"
 * Condition: After reading and writing business logic, each is full of "or's" or '"and's". That's why we provide two condition that are used to handle collections of business items (simple rules)
 * IsMetInterface: To keep it simple, when you implement a business logic or validate against one, you only want to know "is this requirement met or not", so that's what the interface is for. This interface is implemented in the Requirement as well as in the Condition and you have to implement it in your item as well
 * "()" are used to represent an and condition: ("foo", "bar") is "foo and bar"
@@ -140,6 +148,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
+    * add documentation
 * [1.1.0](https://github.com/stevleibelt/php_component_requirement/tree/1.1.0) - not yet released
     * added example WithDisabledCondition
     * added example WithDisabledItem
@@ -155,6 +164,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * refactored Condition::getItems() - now returns plain php array
     * renamed ConditionAbstract to AbstractCondition
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
+    * updated dependencies
 * [1.0.5](https://github.com/stevleibelt/php_component_requirement/tree/1.0.5) - released at 2013-09-16
     * added mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
 * [1.0.4](https://github.com/stevleibelt/php_component_requirement/tree/1.0.4) - released at 2013-08-12
