@@ -12,6 +12,15 @@ As a php developer, I have to deal with a lot of refactoring tasks day in and da
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/bazzline/php_component_requirement.png?branch=master)](http://travis-ci.org/bazzline/php_component_requirement)
 
+The scrutinizer status are:
+[![code quality](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/) | [![code coverage](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/) | [![build status](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/)
+
+The versioneye status is:
+[![dependencies](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002)
+
+Downloads:
+[![Downloads this Month](https://img.shields.io/packagist/dm/net_bazzline/php_component_requirement.svg)](https://packagist.org/packages/net_bazzline/php_component_requirement)
+
 # The Untold Story of Development
 
 After we (take a look to the credits please) tied up the requirements, it took some time to get a feeling of how to put this into classes.
@@ -149,6 +158,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add documentation
+    * create project in openhub
 * [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - not yet released
     * added example WithDisabledCondition
     * added example WithDisabledItem
