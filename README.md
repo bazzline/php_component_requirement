@@ -163,6 +163,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * added example WithDisabledCondition
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
+    * added [migration howto](https://github.com/bazzline/php_component_requirement/blob/master/migration/1.0.5_to_1.1.0.md)
     * covered AbstractItem and AbstractCondition with unit test
     * created AbstractItem that implements ItemInterface
     * created IsDisabledInterface
