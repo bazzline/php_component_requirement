@@ -13,7 +13,7 @@ The build status of the current master branch is tracked by Travis CI:
 [![Build Status](https://travis-ci.org/bazzline/php_component_requirement.png?branch=master)](http://travis-ci.org/bazzline/php_component_requirement)
 
 The scrutinizer status are:
-[![code quality](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/) | [![code coverage](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/) | [![build status](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/)
+[![code quality](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/) | [![build status](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bazzline/php_component_requirement/)
 
 The versioneye status is:
 [![dependencies](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002)
@@ -164,6 +164,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
     * added [migration howto](https://github.com/bazzline/php_component_requirement/blob/master/migration/1.0.5_to_1.1.0.md)
+    * added version eye and scrutinizer coverage
     * covered AbstractItem and AbstractCondition with unit test
     * created AbstractItem that implements ItemInterface
     * created IsDisabledInterface
