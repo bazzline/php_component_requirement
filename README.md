@@ -159,7 +159,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add documentation
     * create project in openhub
-* [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - 2015-03-18
+* [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - released at 2015-03-18
     * added example WithDisabledCondition
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
