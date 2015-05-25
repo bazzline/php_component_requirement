@@ -1,8 +1,8 @@
 {
     "name": "net_bazzline/component_requirement",
     "type": "library",
-    "description": "php component requirement",
-    "keywords": ["php", "net_bazzline", "component", "requirement"],
+    "description": "free as in freedom php component requirement",
+    "keywords": ["php", "net_bazzline", "component", "requirement", "lgpl", "free as in freedom"],
     "homepage": "https://github.com/bazzline/php_component_requirement",
     "license": "LGPLv3",
     "authors": [

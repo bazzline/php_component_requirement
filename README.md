@@ -1,5 +1,7 @@
 # Reason Of Development
 
+Free as in freedom php component.
+
 As a php developer, I have to deal with a lot of refactoring tasks day in and day out. Refactoring includes not only code refactoring but also business logic refactoring. A team member right now had figured out a general problem and we all knew that we have to put "the chaos into a cage" because of the following reasons:
 
 * Developers are lazy and want to call a simple method instead of rewriting complex expressions
