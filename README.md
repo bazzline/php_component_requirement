@@ -156,6 +156,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * [next](https://github.com/bazzline/php_component_requirement/tree/x.y.z) - not yet released
+    * implement __invoke() to use a requirement as a function
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
