@@ -52,9 +52,9 @@ The component is shipped with some [examples](https://github.com/bazzline/php_co
 Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
 * Try to sum things up by writing a sentence like: "The user mets our requirement if he is interested in OOP or big data and if he loves open source software, has no problem to read man pages or use his favorit internet searchengine or if he is already a maintainer or a contributor to an existing open source project"
-* Slice out the items that matters: "OOP", "big data", "loves open source", "read man pages", "use favorite internet searchengine", "maintainer", "contributor"
+* Slice out the items that matters: "OOP", "big data", "loves open source", "read man pages", "use favorite internet search engine", "maintainer", "contributor"
 * Create classes for each item that implements the IsMetInterface and that provides a unequal setter method
-* Collect the items into conditions: [(["OOP", "big data"], "loves open source"["read man pages", "use favorite internet searchengine"]), ["maintainer", "contributor"]]
+* Collect the items into conditions: [(["OOP", "big data"], "loves open source"["read man pages", "use favorite internet search engine"]), ["maintainer", "contributor"]]
 * Create the items and inject them to the right conditions, be aware of the fact that you even can inject conditions into conditions (meaning combine a condition with another)
 * Implement this into an class that extends the Requirement class or let it be assembled via a factory
 
@@ -77,7 +77,9 @@ The [table example](https://github.com/bazzline/php_component_requirement/tree/1
 To put the requirement into an sentence, "The requirement is met, if the color of the table is green or red or brown or yellow and the table as the feature to be extendable or foldable and if the table has a height of 80 cm or if the table is developed by jens wiese or stev leibelt.
 This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
 If we use the common terms from above to express this requirement, we can write it the following way. [([green,red,brown,yellow],[extendable,foldable],[80cm]),[jens wiese,stev leibelt]].
-It will take some time to became familiar with that kind of expression but it can clearify things up.
+It will take some time to became familiar with that kind of expression but it can clarify things up.
+
+This example includes a demonstration how to use the "__invoke()" method in a good way.
 
 ```php
 //to start the example
@@ -156,13 +158,16 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * [next](https://github.com/bazzline/php_component_requirement/tree/x.y.z) - not yet released
-    * implement __invoke() to use a requirement as a function
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add documentation
     * create project in openhub
-* [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - released at 2015-03-18
+    * remove "{@inheritdoc}" and "@author"
+* [1.1.1](https://github.com/bazzline/php_component_requirement/tree/1.1.1) - released at 27.05.2015
+    * implement "__invoke()" to use a requirement as a function
+    * adapted the [table example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") for usage of "__invoke()"
+* [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0) - released at 18.03.2015
     * added example WithDisabledCondition
     * added example WithDisabledItem
     * added getConditions() method to RequirementInterface - this easies up disabling single conditions or single items (by using condition->getItems())
@@ -180,24 +185,24 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * renamed ConditionAbstract to AbstractCondition
     * renamed and updated previous WithShutdown example to WithDisabledRequirement
     * updated dependencies
-* [1.0.5](https://github.com/bazzline/php_component_requirement/tree/1.0.5) - released at 2013-09-16
+* [1.0.5](https://github.com/bazzline/php_component_requirement/tree/1.0.5) - released at 16.09.2013
     * added mechanism to enable or disable evaluation of requirement by isMet method call by using *shutdown*
-* [1.0.4](https://github.com/bazzline/php_component_requirement/tree/1.0.4) - released at 2013-08-12
+* [1.0.4](https://github.com/bazzline/php_component_requirement/tree/1.0.4) - released at 12.08.2013
     * added example to use the component as validator
-* [1.0.3](https://github.com/bazzline/php_component_requirement/tree/1.0.3) - released at 2013-07-22
+* [1.0.3](https://github.com/bazzline/php_component_requirement/tree/1.0.3) - released at 22.07.2013
     * added caching for magic __call condition in abstract method to not iterate over each item (invalid cache if new item is add)
-* [1.0.2](https://github.com/bazzline/php_component_requirement/tree/1.0.2) - released at 2013-07-08
+* [1.0.2](https://github.com/bazzline/php_component_requirement/tree/1.0.2) - released at 08.07.2013
     * refactored locking by using https://packagist.org/packages/net_bazzline/component_lock
-* [1.0.1](https://github.com/bazzline/php_component_requirement/tree/1.0.1) - released at 2013-06-29
+* [1.0.1](https://github.com/bazzline/php_component_requirement/tree/1.0.1) - released at 29.06.2013
     * added annotations to example requirement
     * added return value $this to magic __call methods of requirement and condition
     * added return value $this to addItem method of ConditionInterface
     * added return value $this to addCondition method of RequirementInterface
     * added lock and isLocked method to RequirementInterface, RuntimeException is thrown if addCollection is called and requirement is locked
     * updated readme with explanation of provided examples
-* [1.0.0](https://github.com/bazzline/php_component_requirement/tree/1.0.0) - released at 2013-06-27
+* [1.0.0](https://github.com/bazzline/php_component_requirement/tree/1.0.0) - released at 27.06.2013
     * finished modeling of RequirementInterface (removed addItem)
     * finished two examples
     * finished unittests
-* [0.9.0](https://github.com/bazzline/php_component_requirement/tree/0.9.0) - released at 2013-06-27
+* [0.9.0](https://github.com/bazzline/php_component_requirement/tree/0.9.0) - released at 27.06.2013
     * finished modeling of IsMetInterface and ConditionInterface

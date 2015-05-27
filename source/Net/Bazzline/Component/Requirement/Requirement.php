@@ -16,32 +16,16 @@ use SplObjectStorage;
  */
 class Requirement implements RequirementInterface
 {
-    /**
-     * @var \SplObjectStorage|ConditionInterface[]|IsMetInterface[]
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-06-25
-     */
+    /** @var \SplObjectStorage|ConditionInterface[]|IsMetInterface[] */
     protected $conditions;
 
-    /**
-     * @var \Net\Bazzline\Component\Lock\RuntimeLock
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-06-29
-     */
+    /** @var \Net\Bazzline\Component\Lock\RuntimeLock */
     protected $lock;
 
-    /**
-     * @var bool
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-09-16
-     */
+    /** @var bool */
     protected $isDisabled;
 
-    /**
-     * @var bool
-     * @author stev leibelt <artodeto@bazzline.net>
-     * @since 2013-09-29
-     */
+    /** @var bool */
     private $returnValueIfIsDisabled;
 
     /**
@@ -50,27 +34,11 @@ class Requirement implements RequirementInterface
      */
     public function __construct()
     {
-        $this->conditions = new SplObjectStorage();
-        $this->isDisabled = false;
-        $this->lock = new RuntimeLock();
+        $this->conditions   = new SplObjectStorage();
+        $this->isDisabled   = false;
+        $this->lock         = new RuntimeLock();
         $this->lock->setName(get_class($this));
         $this->setReturnValueIfIsDisabledToTrue();
-    }
-
-    /**
-     * {$inheritdoc}
-     */
-    public function addCondition(ConditionInterface $condition)
-    {
-        if ($this->lock->isLocked()) {
-            throw new RuntimeException(
-                'Requirement is locked, no new condition could be added.'
-            );
-        }
-
-        $this->conditions->attach($condition);
-
-        return $this;
     }
 
     /**
@@ -101,7 +69,37 @@ class Requirement implements RequirementInterface
     }
 
     /**
+     * Validates if given requirement is met
+     *
+     * @return boolean
+     * @throws \RuntimeException
+     */
+    public function __invoke()
+    {
+        return $this->isMet();
+    }
+
+    /**
      * {$inheritdoc}
+     */
+    public function addCondition(ConditionInterface $condition)
+    {
+        if ($this->lock->isLocked()) {
+            throw new RuntimeException(
+                'Requirement is locked, no new condition could be added.'
+            );
+        }
+
+        $this->conditions->attach($condition);
+
+        return $this;
+    }
+
+    /**
+     * Validates if given requirement is met
+     *
+     * @return boolean
+     * @throws \RuntimeException
      */
     public function isMet()
     {

@@ -43,9 +43,9 @@ class IsAGoodTableRequirement extends Requirement
     public function __construct()
     {
         parent::__construct();
-        $colorCondition = $this->createColorCondition();
-        $featureCondition = $this->createFeatureCondition();
-        $perfectHeight = new PerfectHeight();
+        $colorCondition     = $this->createColorCondition();
+        $featureCondition   = $this->createFeatureCondition();
+        $perfectHeight      = new PerfectHeight();
         $developerCondition = $this->createDeveloperCondition();
 
         $andCondition = new AndCondition();
@@ -58,6 +58,23 @@ class IsAGoodTableRequirement extends Requirement
         $orCondition->addItem($andCondition);
 
         $this->addCondition($orCondition);
+    }
+
+    /**
+     * @param string $color
+     * @param string $developer
+     * @param string $feature
+     * @param string $height
+     * @return bool
+     */
+    public function __invoke($color, $developer, $feature, $height)
+    {
+        $this->setColor($color);
+        $this->setDeveloper($developer);
+        $this->setFeature($feature);
+        $this->setHeight($height);
+
+        return $this->isMet();
     }
 
     /**
