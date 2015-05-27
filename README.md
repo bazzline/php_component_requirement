@@ -21,7 +21,7 @@ The versioneye status is:
 [![dependencies](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/550986bcfa7ffc4692000002)
 
 Downloads:
-[![Downloads this Month](https://img.shields.io/packagist/dm/net_bazzline/php_component_requirement.svg)](https://packagist.org/packages/net_bazzline/php_component_requirement)
+[![Downloads this Month](https://img.shields.io/packagist/dm/net_bazzline/component_requirement.svg)](https://packagist.org/packages/net_bazzline/component_requirement)
 
 # The Untold Story of Development
 
