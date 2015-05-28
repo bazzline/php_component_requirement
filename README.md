@@ -157,13 +157,14 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 
 # Version History
 
-* [next](https://github.com/bazzline/php_component_requirement/tree/x.y.z) - not yet released
+* upcomming
     * Investigate if we can use gherkin to create requirements
     * add stack trace for retrieving the first isMet-Item that returns false
     * add trigger to run through all isMet-Items and add all fails to the stack trace
     * add documentation
     * create project in openhub
     * remove "{@inheritdoc}" and "@author"
+    * updated dependencies
 * [1.1.1](https://github.com/bazzline/php_component_requirement/tree/1.1.1) - released at 27.05.2015
     * implement "__invoke()" to use a requirement as a function
     * adapted the [table example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") for usage of "__invoke()"
