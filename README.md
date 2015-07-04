@@ -158,12 +158,14 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
 # Version History
 
 * upcomming
-    * Investigate if we can use gherkin to create requirements
-    * add stack trace for retrieving the first isMet-Item that returns false
-    * add trigger to run through all isMet-Items and add all fails to the stack trace
-    * add documentation
-    * create project in openhub
-    * remove "{@inheritdoc}" and "@author"
+    * @todo
+        * Investigate if we can use gherkin to create requirements
+        * add stack trace for retrieving the first isMet-Item that returns false
+        * add trigger to run through all isMet-Items and add all fails to the stack trace
+        * add documentation
+        * create project in openhub
+        * remove "{@inheritdoc}" and "@author"
+* [1.1.2](https://github.com/bazzline/php_component_requirement/tree/1.1.2) - released at 04.07.2015
     * updated dependencies
 * [1.1.1](https://github.com/bazzline/php_component_requirement/tree/1.1.1) - released at 27.05.2015
     * implement "__invoke()" to use a requirement as a function
