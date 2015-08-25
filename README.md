@@ -9,7 +9,8 @@ As a php developer, I have to deal with a lot of refactoring tasks day in and da
 * We want to have a generic component where you can reuse business items
 * Since business logic can became nested, the component should handle this
 * Add simple way to prevent requirement from future changes (added by locking in [1.0.1](https://github.com/bazzline/php_component_requirement/tree/1.0.1))
-* Add simple way to disable requirement evaluation (added by *IsDisabledInterface* in [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0))
+* Add simple way to disable requirement evaluation (added by `IsDisabledInterface` in [1.1.0](https://github.com/bazzline/php_component_requirement/tree/1.1.0))
+* A Requirement should be stateless to be reused as often as possible
 
 The build status of the current master branch is tracked by Travis CI: 
 [![Build Status](https://travis-ci.org/bazzline/php_component_requirement.png?branch=master)](http://travis-ci.org/bazzline/php_component_requirement)
