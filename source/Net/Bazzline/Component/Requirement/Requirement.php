@@ -37,7 +37,7 @@ class Requirement implements RequirementInterface
         $this->conditions   = new SplObjectStorage();
         $this->isDisabled   = false;
         $this->lock         = new RuntimeLock();
-        $this->lock->setName(get_class($this));
+        $this->lock->setResource(get_class($this));
         $this->setReturnValueIfIsDisabledToTrue();
     }
 

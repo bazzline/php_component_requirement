@@ -22,7 +22,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "net_bazzline/component_lock": "1.0.*"
+        "net_bazzline/component_lock": "2.1.*"
     },
     "require-dev": {
         "mikey179/vfsStream": "1.5.*",
