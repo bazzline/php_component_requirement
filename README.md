@@ -166,6 +166,8 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
         * add documentation
         * create project in openhub
         * remove "{@inheritdoc}" and "@author"
+* [1.1.6](https://github.com/bazzline/php_component_requirement/tree/1.1.6) - released at 08.11.2015
+    * updated dependency
 * [1.1.5](https://github.com/bazzline/php_component_requirement/tree/1.1.5) - released at 13.09.2015
     * updated dependency
 * [1.1.4](https://github.com/bazzline/php_component_requirement/tree/1.1.4) - released at 19.08.2015
