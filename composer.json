@@ -2,7 +2,17 @@
     "name": "net_bazzline/component_requirement",
     "type": "library",
     "description": "free as in freedom php component requirement",
-    "keywords": ["php", "net_bazzline", "component", "requirement", "lgpl", "free as in freedom"],
+    "keywords": [
+        "bazzline",
+        "psr",
+        "psr-4",
+        "php",
+        "net_bazzline",
+        "component",
+        "requirement",
+        "lgpl",
+        "free as in freedom"
+    ],
     "homepage": "https://github.com/bazzline/php_component_requirement",
     "license": "LGPLv3",
     "authors": [
@@ -27,12 +37,16 @@
     "require-dev": {
         "mikey179/vfsStream": "1.6.*",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "4.8||~5.0"
+        "phpunit/phpunit": "~4.8||~5.2"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Net\\Bazzline\\Component\\Requirement\\": "source/",
-            "Test\\Net\\Bazzline\\Component\\Requirement\\": "tests/",
+            "Test\\Net\\Bazzline\\Component\\Requirement\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Example\\": "examples/source"
         }
     }
