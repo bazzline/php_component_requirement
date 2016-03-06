@@ -222,3 +222,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
     * finished unittests
 * [0.9.0](https://github.com/bazzline/php_component_requirement/tree/0.9.0) - released at 27.06.2013
     * finished modeling of IsMetInterface and ConditionInterface
+
+# Final Words
+
+Star it if you like it :-). Add issues if you need it. Pull patches if you enjoy it. Write a blog entry if you use it. [Donate something](https://gratipay.com/~stevleibelt) if you love it :-].
