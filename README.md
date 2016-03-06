@@ -166,6 +166,7 @@ Thanks to Mihai Andrei Cosma - this is your idea, developed by ourselves :-).
         * add documentation
         * create project in openhub
         * remove "{@inheritdoc}" and "@author"
+* [1.2.0](https://github.com/bazzline/php_component_requirement/tree/1.2.0) - released at 06.03.2016
     * moved to psr-4 autoloading
 * [1.1.7](https://github.com/bazzline/php_component_requirement/tree/1.1.7) - released at 11.12.2015
     * updated dependency
