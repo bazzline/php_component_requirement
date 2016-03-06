@@ -48,7 +48,7 @@ To understand the component, it is worth to know about the used terms and names.
 
 ## General
 
-The component is shipped with some [examples](https://github.com/bazzline/php_component_requirement/tree/master/examples/source/Example "examples for how to use the php component requirement").
+The component is shipped with some [examples](https://github.com/bazzline/php_component_requirement/tree/master/examples/ "examples for how to use the php component requirement").
 
 Feel free to pull some more. Nevertheless, to use this component, you have to do the following steps (and yes, this is already the example ;-)).
 
@@ -61,19 +61,19 @@ Feel free to pull some more. Nevertheless, to use this component, you have to do
 
 ## The Simple Example
 
-The [simple example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
+The [simple example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/Simple "php component requirement - simple example") is dealing with a weekday problem. It defines a weekday item. You can use this item to see if the correct weekday requirement is met.
 
-As you can see in the [weekday example implementation](https://github.com/bazzline/php_component_requirement/blob/1.0.2/examples/source/Example/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
+As you can see in the [weekday example implementation](https://github.com/bazzline/php_component_requirement/tree/master/examples/Simple/WeekdayExample.php "php component requirement - simple example - weekday requirement implementation").
 The example connections two valid weekdays ("Mon" and "Tue") with an or condition. To put this into an sentence, you could write "The requirement is met, when the current weekday is monday or tuesday".
 
 ```php
 //to start the example
-php examples/source/Example/Simple/Example.php
+php examples/Simple/Example.php
 ```
 
 ## The Table Example
 
-The [table example](https://github.com/bazzline/php_component_requirement/tree/1.0.2/examples/source/Example/Table "php component requirement - table example") is dealing with a nested condition.
+The [table example](https://github.com/bazzline/php_component_requirement/tree/master/examples/Table "php component requirement - table example") is dealing with a nested condition.
 
 To put the requirement into an sentence, "The requirement is met, if the color of the table is green or red or brown or yellow and the table as the feature to be extendable or foldable and if the table has a height of 80 cm or if the table is developed by jens wiese or stev leibelt.
 This example needs multiple items, a color item, a feature item, a height item and a developer item. This items are connect via multiple conditions and the conditions are nested together.
@@ -84,12 +84,12 @@ This example includes a demonstration how to use the "__invoke()" method in a go
 
 ```php
 //to start the example
-php examples/source/Example/Table/Example.php
+php examples/Table/Example.php
 ```
 
 ## The Validator Example
 
-The [validator example](https://github.com/bazzline/php_component_requirement/tree/1.0.4/examples/source/Example/Validator "php component requirement - table validator") is using the component as validator.
+The [validator example](https://github.com/bazzline/php_component_requirement/tree/master/examples/Validator "php component requirement - table validator") is using the component as validator.
 
 The example shows how to use the component as a validator by defining simple validators, adding them to a collection and use the requirement class as validator.
 Only if all validators are returning a positive "isMet", the table has passed the validator.
@@ -97,43 +97,43 @@ Currently, no stack trace is available (check upcoming release) so the only feed
 
 ```php
 //to start the example
-php examples/source/Example/Validator/Example.php
+php examples/Validator/Example.php
 ```
 
 ## The Disabled Requirement Example
 
-The [disabled requirement example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
+The [disabled requirement example](https://github.com/bazzline/php_component_requirement/tree/master/examples/WithDisabledRequirement/Example.php "php component requirement - with disabled requirement example") is using the ability to disable a whole requirement.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the requirement, the behavior changes and the evaluation now always returns true.
 
 ```php
 //to start the example
-php examples/source/Example/WithDisabledRequirement/Example.php
+php examples/WithDisabledRequirement/Example.php
 ```
 
 ## The Disabled Condition Example
 
-The [disabled condition example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledCondition/Example.php "php component requirement - with disabled condition example") is using the ability to disable a condition.
+The [disabled condition example](https://github.com/bazzline/php_component_requirement/tree/master/examples/WithDisabledCondition/Example.php "php component requirement - with disabled condition example") is using the ability to disable a condition.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the condition, the behavior changes and the evaluation now always returns true.
 
 ```php
 //to start the example
-php examples/source/Example/WithDisabledCondition/Example.php
+php examples/WithDisabledCondition/Example.php
 ```
 
 ## The Disabled Item Example
 
-The [disabled item example](https://github.com/bazzline/php_component_requirement/tree/1.1.0/examples/source/Example/WithDisabledItem/Example.php "php component requirement - with disabled item example") is using the ability to disable a item.
+The [disabled item example](https://github.com/bazzline/php_component_requirement/tree/master/examples/WithDisabledItem/Example.php "php component requirement - with disabled item example") is using the ability to disable a item.
 
 This example shows how to use the implementation of the *IsDisabledInterface*.
 First, the requirement is evaluated with an item, that always returns *false*. If *disable* is called for the item, the behavior changes and the evaluation now always returns true.
 
 ```php
 //to start the example
-php examples/source/Example/WithDisabledCondition/Example.php
+php examples/WithDisabledCondition/Example.php
 ```
 
 # Hints For Using And Developing
